@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第八章：<span style="color: red;">面向对象方法学</span> - 软件工程导论复习系统</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <div class="decorative-circle decorative-circle-1"></div>
+    <div class="decorative-circle decorative-circle-2"></div>
+    
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-logo">软件工程复习</h1>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="keypoints.html" class="nav-link">复习重点</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="test.html" class="nav-link">测试练习</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+        
+        <main>
+            <section class="chapter-content">
+                <div class="content-container-wide">
+                    <h2 style="text-align: center; margin-bottom: 2rem; color: #2c3e50; font-size: 2.2rem;">第八章：<span style="color: red;">面向对象方法学</span></h2>
+                    
+            <section class="mindmap-section">
+                <div class="container">
+                    <h2 class="section-title">第八章知识体系</h2>
+                    <div class="mindmap-container" id="mindmap-container">
+                        <div class="knowledge-map">
+                            <div class="central-node">
+                                <span style="color: red;">面向对象方法学</span>
+                            </div>
+                            <div class="branch-connectors">
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                            </div>
+                            <div class="branch-level-1">
+                                <div class="branch-node branch-node-1">
+                                    <div class="node-icon"><i class="fas fa-shapes"></i></div>
+                                    <div class="node-content">基本概念</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">对象</div>
+                                        <div class="subnode">类</div>
+                                        <div class="subnode">封装</div>
+                                        <div class="subnode">继承</div>
+                                        <div class="subnode">多态</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="branch-node branch-node-2">
+                                    <div class="node-icon"><i class="fas fa-project-diagram"></i></div>
+                                    <div class="node-content">分析与设计</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">OOA</div>
+                                        <div class="subnode">OOD</div>
+                                        <div class="subnode">OOP</div>
+                                        <div class="subnode">UML建模</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="branch-node branch-node-3">
+                                    <div class="node-icon"><i class="fas fa-object-group"></i></div>
+                                    <div class="node-content">设计原则</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">单一职责</div>
+                                        <div class="subnode">开闭原则</div>
+                                        <div class="subnode">里氏替换</div>
+                                        <div class="subnode">依赖倒置</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="branch-node branch-node-4">
+                                    <div class="node-icon"><i class="fas fa-cogs"></i></div>
+                                    <div class="node-content">设计模式</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">创建型模式</div>
+                                        <div class="subnode">结构型模式</div>
+                                        <div class="subnode">行为型模式</div>
+                                        <div class="subnode">架构模式</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="branch-node branch-node-5">
+                                    <div class="node-icon"><i class="fas fa-star"></i></div>
+                                    <div class="node-content">优点特性</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">模块化</div>
+                                        <div class="subnode">可重用</div>
+                                        <div class="subnode">可维护</div>
+                                        <div class="subnode">可扩展</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="chapter-content">
+                <div class="content-container-wide">
+                    <div class="topic-list">
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★软件危机</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p>定义：软件开发过程中遇到的各种问题和困难</p>
+                                <p><strong>表现：</strong></p>
+                                <ul>
+                                    <li>软件成本高：如IBM的System/360操作系统项目，预算1000万美元，最终花费超过5000万美元</li>
+                                    <li>软件质量差：程序存在大量错误，可靠性差，如早期的银行系统经常出现计算错误</li>
+                                    <li>开发进度难以控制：项目延期严重，如原定6个月完成的项目可能拖到2-3年</li>
+                                    <li>软件维护困难：代码难以理解，修改容易引入新错误</li>
+                                </ul>
+                                <p><strong>原因：</strong></p>
+                                <ul>
+                                    <li>需求不明确：用户需求频繁变更，开发过程中不断提出新要求</li>
+                                    <li>开发技术落后：缺乏有效的开发方法和工具</li>
+                                    <li>管理困难：项目缺乏有效计划和监控机制</li>
+                                    <li>缺乏正确的方法指导：没有规范的开发流程</li>
+                                </ul>
+                                <p><strong>生活化类比：</strong>软件危机就像建造房屋时没有设计图纸，工人边建边改，结果工期拖延、成本超支、质量低劣。</p>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★软件工程基本原理</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p>理解其核心思想和实践意义（共7条原理）</p>
+                                <p><strong>软件工程的7条基本原理：</strong></p>
+                                <ol>
+                                    <li>用分阶段的生命周期计划严格管理</li>
+                                    <li>坚持进行阶段评审</li>
+                                    <li>实行严格的产品控制</li>
+                                    <li>采用现代程序设计技术</li>
+                                    <li>结果应能清楚地审查</li>
+                                    <li>开发小组人员应少而精</li>
+                                    <li>承认不断改进软件工程实践的必要性</li>
+                                </ol>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★软件工程三要素</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p>方法、工具、过程</p>
+                                <ul>
+                                    <li><strong>方法：</strong>软件开发的方法论
+                                        <ul>
+                                            <li>例子：结构化分析设计方法、面向对象分析设计方法</li>
+                                            <li>类比：就像建筑中的施工方法（钢筋混凝土结构 vs 木结构）</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>工具：</strong>支持软件开发的工具
+                                        <ul>
+                                            <li>例子：需求分析工具（如Visio）、编码工具（如IDE）、测试工具（如JUnit）</li>
+                                            <li>类比：就像建筑中的工具（锤子、锯子、起重机）</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>过程：</strong>软件开发的步骤和流程
+                                        <ul>
+                                            <li>例子：瀑布模型、敏捷开发流程</li>
+                                            <li>类比：就像建筑中的施工流程（设计→打地基→建框架→装修）</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★软件工程方法</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p>传统软件工程方法 vs 面向对象软件工程方法</p>
+                                <p><strong>传统软件工程方法：</strong></p>
+                                <ul>
+                                    <li>以功能分解为核心</li>
+                                    <li>自顶向下设计</li>
+                                    <li>结构化分析和设计</li>
+                                </ul>
+                                <div style="margin-top: 0.5rem; padding: 0.5rem; background-color: #f9f9f9; border-left: 3px solid #3498db; font-family: monospace;">
+                                    <strong>传统方法示意图：</strong><br>
+                                    主任务<br>
+                                    ↓<br>
+                                    子任务1 ──→ 子任务2 ──→ 子任务3<br>
+                                    ↓              ↓              ↓<br>
+                                    功能1        功能2        功能3<br>
+                                </div>
+                                <p><strong>面向对象软件工程方法：</strong></p>
+                                <ul>
+                                    <li>以对象为核心</li>
+                                    <li>封装、继承、多态</li>
+                                    <li>更符合人类思维</li>
+                                </ul>
+                                <div style="margin-top: 0.5rem; padding: 0.5rem; background-color: #f9f9f9; border-left: 3px solid #3498db; font-family: monospace;">
+                                    <strong>面向对象方法示意图：</strong><br>
+                                    [对象1] ──→ [对象2] ──→ [对象3]<br>
+                                    ↓            ↓            ↓<br>
+                                    属性1      属性2      属性3<br>
+                                    方法1      方法2      方法3<br>
+                                    ↑<br>
+                                    封装<br>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★软件生命周期</span>
+                                <div class="toggle-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p>三大阶段：定义阶段、开发阶段、维护阶段</p>
+                                <p><strong>具体阶段：</strong></p>
+                                <ol>
+                                    <li>可行性研究</li>
+                                    <li>需求分析</li>
+                                    <li>总体设计</li>
+                                    <li>详细设计</li>
+                                    <li>编码实现</li>
+                                    <li>综合测试</li>
+                                    <li>维护</li>
+                                </ol>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★软件生命周期模型</span>
+                                <div class="toggle-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p>瀑布模型、快速原型模型、增量模型、螺旋模型、喷泉模型</p>
+                                <ul>
+                                    <li><strong>瀑布模型：</strong>阶段划分清晰，文档驱动
+                                        <ul>
+                                            <li>例子：大型系统开发，如银行核心系统、航空订票系统</li>
+                                            <li>类比：建造大楼，先设计图纸，再打地基，再建主体，最后装修</li>
+                                            <li>特点：每个阶段必须完成才能进入下一阶段</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>快速原型模型：</strong>适用于需求不明确的系统
+                                        <ul>
+                                            <li>例子：用户界面设计、移动应用原型开发</li>
+                                            <li>类比：先用粘土做一个简单的模型，让用户看是否满意，再用石材精雕细琢</li>
+                                            <li>特点：快速构建可运行的原型，让用户参与反馈</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>增量模型：</strong>逐步构建系统
+                                        <ul>
+                                            <li>例子：Office软件开发，先发布Word，再添加Excel、PowerPoint等模块</li>
+                                            <li>类比：盖房子先盖一个房间投入使用，再逐步增加其他房间</li>
+                                            <li>特点：将系统分解为多个增量，逐个开发和交付</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>螺旋模型：</strong>结合瀑布模型和快速原型模型
+                                        <ul>
+                                            <li>例子：大型复杂系统，如航空航天系统、军事软件</li>
+                                            <li>类比：像螺旋一样上升，每个循环都包含风险分析和原型开发</li>
+                                            <li>特点：强调风险分析，每个阶段都有风险评估</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>喷泉模型：</strong>适用于面向对象开发
+                                        <ul>
+                                            <li>例子：面向对象的图形编辑软件、游戏开发</li>
+                                            <li>类比：像喷泉的水流，循环往复，各阶段可以重叠和迭代</li>
+                                            <li>特点：开发过程具有迭代性和无缝性，各阶段可以并行进行</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★软件维护类型（4种）</span>
+                                <div class="toggle-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p>改正性维护、适应性维护、完善性维护、预防性维护</p>
+                                <ul>
+                                    <li><strong>改正性维护：</strong>诊断和改正软件错误（最基础）
+                                        <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                                            <li>例子：修复银行系统中的利息计算错误</li>
+                                            <li>例子：修正电商网站购物车计算总价的bug</li>
+                                            <li>特点：被动响应，修复已发现的错误</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>适应性维护：</strong>适应环境变化（如操作系统、接口变化）
+                                        <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                                            <li>例子：将旧系统从Windows Server 2003迁移到Windows Server 2019</li>
+                                            <li>例子：适配新的API接口，如微信支付接口升级</li>
+                                            <li>特点：主动适应环境变化</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>完善性维护：</strong>增加功能或改进性能（占比最多）
+                                        <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                                            <li>例子：在聊天软件中添加语音消息功能</li>
+                                            <li>例子：优化数据库查询速度，提升系统响应性能</li>
+                                            <li>特点：满足用户新增需求，提升用户体验</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>预防性维护：</strong>为未来可能的改变做准备
+                                        <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                                            <li>例子：重构老旧代码，提高代码可读性和可维护性</li>
+                                            <li>例子：添加日志记录功能，便于未来排查问题</li>
+                                            <li>特点：前瞻性维护，防止未来可能出现的问题</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★面向对象的基本概念</span>
+                                <div class="toggle-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><strong><span style="color: red;">对象(Object)</span>：</strong>系统中用来描述客观事物的一个实体，是构成系统的基本单位。</p>
+                                <ul>
+                                    <li>对象由一组属性和对这组属性进行操作的一组服务构成</li>
+                                    <li>对象 = 数据 + 算法</li>
+                                    <li>属性：描述对象特征的数据项</li>
+                                    <li>服务：对数据进行的操作</li>
+                                </ul>
+                                <p><strong><span style="color: red;">类(Class)</span>：</strong>具有相同属性和服务的一组对象的集合，是一个抽象的概念。</p>
+                                <ul>
+                                    <li>类是对一系列相似对象的抽象描述</li>
+                                    <li>对象是类的具体实例</li>
+                                    <li>类是对象的模板，对象是类的实例</li>
+                                </ul>
+                                <p><strong><span style="color: red;">封装(Encapsulation)</span>：</strong>把对象的属性和服务结合成一个独立的系统单位，并尽可能隐蔽对象的内部细节。</p>
+                                <ul>
+                                    <li>信息隐蔽是通过对象的封装性来实现的</li>
+                                    <li>对外提供访问接口，内部实现细节对外不可见</li>
+                                    <li>提高了系统的安全性和可维护性</li>
+                                </ul>
+                                <p><strong><span style="color: red;">继承(Inheritance)</span>：</strong>子类可以获得父类的属性和服务，也可以定义自己的属性和方法。</p>
+                                <ul>
+                                    <li>单继承：一个子类只有一个父类</li>
+                                    <li>多继承：一个子类可以有多个父类</li>
+                                    <li>提高了软件模块的可重用性和可扩充性</li>
+                                </ul>
+                                <p><strong><span style="color: red;">多态(Polymorphism)</span>：</strong>同一个操作作用于不同类的对象可以有不同的解释，产生不同的执行结果。</p>
+                                <ul>
+                                    <li>允许不同类的对象对同一消息做出响应</li>
+                                    <li>灵活性和可扩展性的体现</li>
+                                    <li>方法重载和方法重写都是多态的体现</li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★<span style="color: red;">面向对象分析(OOA)</span></span>
+                                <div class="toggle-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><strong>面向对象分析的任务：</strong>运用面向对象方法进行需求分析，建立系统分析模型。</p>
+                                <p><strong>OOA的主要活动：</strong></p>
+                                <ol>
+                                    <li><span style="color: red;">识别对象，进行抽象分类</span></li>
+                                    <li><span style="color: red;">标识对象间的静态联系</span></li>
+                                    <li><span style="color: red;">定义对象的服务，标识对象间的动态联系</span></li>
+                                    <li><span style="color: red;">确定对象的操作方法</span></li>
+                                    <li><span style="color: red;">确定约束，给出说明</span></li>
+                                    <li><span style="color: red;">整理和修改模型</span></li>
+                                </ol>
+                                <p><strong>OOA模型：</strong></p>
+                                <ul>
+                                    <li><strong><span style="color: red;">对象模型</span>：</strong>描述系统的静态结构</li>
+                                    <li><strong><span style="color: red;">动态模型</span>：</strong>描述系统的交互序列</li>
+                                    <li><strong><span style="color: red;">功能模型</span>：</strong>描述系统的数据变换功能</li>
+                                </ul>
+                                <p><strong>OOA的特点：</strong></p>
+                                <ul>
+                                    <li><span style="color: red;">从现实世界中的实体出发认识问题</span></li>
+                                    <li><span style="color: red;">建立的分析模型易于理解和交流</span></li>
+                                    <li><span style="color: red;">分析模型对需求的变化具有较强的适应性</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★<span style="color: red;">面向对象设计(OOD)</span></span>
+                                <div class="toggle-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><strong>面向对象设计的任务：</strong>在OOA模型的基础上，对分析模型进行补充和完善，形成设计模型。</p>
+                                <p><strong>OOD的主要内容：</strong></p>
+                                <ul>
+                                    <li><span style="color: red;">问题域部分设计</span></li>
+                                    <li><span style="color: red;">人机交互部分设计</span></li>
+                                    <li><span style="color: red;">任务管理部分设计</span></li>
+                                    <li><span style="color: red;">数据管理部分设计</span></li>
+                                </ul>
+                                <p><strong>OOD设计准则：</strong></p>
+                                <ul>
+                                    <li><strong><span style="color: red;">抽象</span>：</strong>抽取事物的本质特征</li>
+                                    <li><strong><span style="color: red;">信息隐蔽</span>：</strong>对象的实现细节对外部是隐蔽的</li>
+                                    <li><strong><span style="color: red;">功能独立</span>：</strong>对象的内部关联要尽量紧密</li>
+                                    <li><strong><span style="color: red;">一致性</span>：</strong>设计应保持内在的一致性</li>
+                                    <li><strong><span style="color: red;">完备性</span>：</strong>设计应能完全表达问题空间的需求</li>
+                                </ul>
+                                <p><strong>OOD设计风格：</strong></p>
+                                <ul>
+                                    <li><span style="color: red;">对象类粒度适中</span></li>
+                                    <li><span style="color: red;">继承层次适当</span></li>
+                                    <li><span style="color: red;">消息关联尽量简单</span></li>
+                                    <li><span style="color: red;">对象间耦合程度要低</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★<span style="color: red;">面向对象编程(OOP)</span></span>
+                                <div class="toggle-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><strong>面向对象编程的特点：</strong></p>
+                                <ul>
+                                    <li><strong><span style="color: red;">封装性</span>：</strong>将数据和操作数据的方法绑定在一起</li>
+                                    <li><strong><span style="color: red;">继承性</span>：</strong>子类可以继承父类的属性和方法</li>
+                                    <li><strong><span style="color: red;">多态性</span>：</strong>同一个接口可以有不同的实现</li>
+                                </ul>
+                                <p><strong>常用面向对象编程语言：</strong></p>
+                                <ul>
+                                    <li>C++：在C语言基础上增加了面向对象特性</li>
+                                    <li>Java：纯面向对象编程语言，跨平台性强</li>
+                                    <li>C#：微软开发的面向对象语言</li>
+                                    <li>Python：支持多种编程范式，包括面向对象</li>
+                                </ul>
+                                <p><strong>OOP的优点：</strong></p>
+                                <ul>
+                                    <li><span style="color: red;">可重用性高</span></li>
+                                    <li><span style="color: red;">可维护性好</span></li>
+                                    <li><span style="color: red;">可扩展性强</span></li>
+                                    <li><span style="color: red;">代码可读性好</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★<span style="color: red;">UML统一建模语言</span></span>
+                                <div class="toggle-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><strong>UML概述：</strong>Unified Modeling Language，是一种通用的可视化建模语言，用于软件密集型系统的分析、设计和构造。</p>
+                                <p><strong>UML图的分类：</strong></p>
+                                <ul>
+                                    <li><strong><span style="color: red;">结构图</span>：</strong>描述系统的静态结构
+                                        <ul>
+                                            <li><span style="color: red;">类图</span>：描述类、接口以及它们之间的关系</li>
+                                            <li><span style="color: red;">对象图</span>：表示类的对象实例</li>
+                                            <li><span style="color: red;">组件图</span>：描述组件及其依赖关系</li>
+                                            <li><span style="color: red;">部署图</span>：描述系统中硬件和软件的物理配置</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong><span style="color: red;">行为图</span>：</strong>描述系统的动态行为
+                                        <ul>
+                                            <li><span style="color: red;">用例图</span>：描述系统功能及参与者与系统的关系</li>
+                                            <li><span style="color: red;">活动图</span>：描述业务流程或操作的工作流程</li>
+                                            <li><span style="color: red;">状态图</span>：描述对象的状态转换</li>
+                                            <li><span style="color: red;">序列图</span>：描述对象间的交互序列</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p><strong>UML的优势：</strong></p>
+                                <ul>
+                                    <li><span style="color: red;">标准化的建模语言</span></li>
+                                    <li><span style="color: red;">可视化程度高</span></li>
+                                    <li><span style="color: red;">与具体实现无关</span></li>
+                                    <li><span style="color: red;">支持面向对象的分析、设计和实现</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★面向对象设计原则</span>
+                                <div class="toggle-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><strong>六大设计原则：</strong></p>
+                                <ol>
+                                    <li><strong><span style="color: red;">单一职责原则(SRP)</span>：</strong>一个类应该仅有一个引起它变化的原因</li>
+                                    <li><strong><span style="color: red;">开闭原则(OCP)</span>：</strong>对扩展开放，对修改封闭</li>
+                                    <li><strong><span style="color: red;">里氏替换原则(LSP)</span>：</strong>子类型必须能够替换掉它们的基类型</li>
+                                    <li><strong><span style="color: red;">依赖倒置原则(DIP)</span>：</strong>高层模块不应该依赖底层模块，两者都应该依赖于抽象</li>
+                                    <li><strong><span style="color: red;">接口隔离原则(ISP)</span>：</strong>客户端不应该依赖不需要的接口</li>
+                                    <li><strong><span style="color: red;">迪米特法则(LoD)</span>：</strong>一个对象应当对其他对象有尽可能少的了解</li>
+                                </ol>
+                                <p><strong>设计模式分类：</strong></p>
+                                <ul>
+                                    <li><strong><span style="color: red;">创建型模式</span>：</strong>工厂模式、抽象工厂模式、单例模式、建造者模式、原型模式</li>
+                                    <li><strong><span style="color: red;">结构型模式</span>：</strong>适配器模式、桥接模式、组合模式、装饰器模式、外观模式、享元模式、代理模式</li>
+                                    <li><strong><span style="color: red;">行为型模式</span>：</strong>责任链模式、命令模式、解释器模式、迭代器模式、中介者模式、备忘录模式、观察者模式、状态模式、策略模式、模板方法模式、访问者模式</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <div class="container">
+                <p class="footer-content">软件工程导论复习系统 &copy; 2026</p>
+            </div>
+        </footer>
+
+        <button id="backToTop" onclick="scrollToTop()" style="display: none;">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+
+        <script src="js/main.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 1000,
+                once: true,
+                easing: 'ease-out'
+            });
+        </script>
+    </body>
+</html>

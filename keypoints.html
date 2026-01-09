@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复习重点 - 软件工程导论复习系统</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <div class="decorative-circle decorative-circle-1"></div>
+    <div class="decorative-circle decorative-circle-2"></div>
+    
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-logo">软件工程复习</h1>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="keypoints.html" class="nav-link active">复习重点</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="test.html" class="nav-link">测试练习</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="chapter-content">
+            <div class="content-container-wide">
+                <h2 style="text-align: center; margin-bottom: 2rem; color: #2c3e50; font-size: 2.2rem;">软件工程导论重点知识汇总</h2>
+                
+                <div class="topic-list">
+                    <div class="topic-item">
+                        <div class="topic-title">
+                            <span>★基本概念</span>
+                        </div>
+                        <div class="topic-content hidden">
+                            <ul>
+                                <li><strong>软件危机：</strong>软件开发和维护过程中遇到的一系列严重问题
+                                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                                        <li>例子：IBM的System/360操作系统项目，预算1000万美元，最终花费超过5000万美元</li>
+                                        <li>例子：早期银行系统频繁出现计算错误，导致客户资金错误</li>
+                                        <li>表现：成本超支、进度延误、质量低下、维护困难</li>
+                                        <li>类比：像建造房屋时没有设计图纸，工人边建边改，结果工期拖延、成本超支、质量低劣</li>
+                                    </ul>
+                                    <div style="margin-top: 0.5rem; padding: 0.5rem; background-color: #f9f9f9; border-left: 3px solid #3498db; font-family: monospace;">
+                                        <strong>软件危机关系图：</strong><br>
+                                        需求不明确<br>
+                                        ↓<br>
+                                        设计不当 → 代码质量差<br>
+                                        ↑      ↗<br>
+                                        工具落后 ← 测试不足<br>
+                                    </div>
+                                </li>
+                                <li><strong>软件工程：</strong>应用计算机科学理论和技术以及工程管理原则和方法的学科
+                                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                                        <li>例子：像建筑工程一样，需要系统化的方法和管理</li>
+                                        <li>目标：提高软件质量、降低开发成本、控制开发进度</li>
+                                    </ul>
+                                </li>
+                                <li><strong>软件生命周期：</strong>软件定义、开发、维护的全过程
+                                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                                        <li>例子：从需求分析到最终退役的全过程，如Office软件的整个生命周期</li>
+                                        <li>类比：一个人从出生、成长、工作到退休的整个过程</li>
+                                    </ul>
+                                    <div style="margin-top: 0.5rem; padding: 0.5rem; background-color: #f9f9f9; border-left: 3px solid #3498db; font-family: monospace;">
+                                        <strong>软件生命周期阶段图：</strong><br>
+                                        定义阶段：[可行性研究] → [需求分析]<br>
+                                        ↓<br>
+                                        开发阶段：[总体设计] → [详细设计] → [编码实现] → [测试]<br>
+                                        ↓<br>
+                                        维护阶段：[软件维护]<br>
+                                    </div>
+                                </li>
+                                <li><strong>软件过程：</strong>为获得高质量软件所需完成的一系列任务的框架
+                                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                                        <li>例子：瀑布模型、敏捷开发等开发流程</li>
+                                        <li>类比：施工流程，包括设计、打地基、建主体、装修等步骤</li>
+                                    </ul>
+                                    <div style="margin-top: 0.5rem; padding: 0.5rem; background-color: #f9f9f9; border-left: 3px solid #3498db; font-family: monospace;">
+                                        <strong>软件过程模型对比：</strong><br>
+                                        瀑布模型：  线性顺序<br>
+                                        [需求]→[设计]→[编码]→[测试]→[维护]<br>
+                                        <br>
+                                        螺旋模型：  风险驱动<br>
+                                        [风险分析] → [原型开发] → [评估] → [规划]<br>
+                                        ↑                                         ↓<br>
+                                        ←———————————————迭代———————————————————————<br>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-item">
+                        <div class="topic-title">
+                            <span>★软件工程三要素</span>
+                        </div>
+                        <div class="topic-content hidden">
+                            <ul>
+                                <li><strong>方法：</strong>软件开发的方法论
+                                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                                        <li>例子：结构化分析设计方法（如：传统银行系统开发）</li>
+                                        <li>例子：面向对象分析设计方法（如：现代Web应用开发）</li>
+                                        <li>例子：敏捷开发方法（如：创业公司快速迭代产品）</li>
+                                        <li>类比：就像建筑中的施工方法（钢筋混凝土结构 vs 木结构 vs 钢结构）</li>
+                                    </ul>
+                                </li>
+                                <li><strong>工具：</strong>支持软件开发的工具
+                                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                                        <li>需求分析工具：Visio、Enterprise Architect</li>
+                                        <li>编码工具：Visual Studio、IntelliJ IDEA、Eclipse</li>
+                                        <li>测试工具：JUnit、Selenium、LoadRunner</li>
+                                        <li>版本控制工具：Git、SVN</li>
+                                        <li>类比：就像建筑中的工具（锤子、锯子、起重机、测量仪器）</li>
+                                    </ul>
+                                </li>
+                                <li><strong>过程：</strong>软件开发的步骤和流程
+                                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                                        <li>瀑布模型：需求分析→系统设计→编码实现→测试→维护</li>
+                                        <li>敏捷开发：迭代开发，持续交付</li>
+                                        <li>DevOps：开发运维一体化</li>
+                                        <li>类比：就像建筑中的施工流程（设计→打地基→建框架→装修→验收）</li>
+                                    </ul>
+                                    <div style="margin-top: 0.5rem; padding: 0.5rem; background-color: #f9f9f9; border-left: 3px solid #3498db; font-family: monospace;">
+                                        <strong>软件工程三要素关系图：</strong><br>
+                                        [方法] ←—————— 实现 ——————→ [过程]<br>
+                                          ↓                           ↑<br>
+                                      指导                       保障<br>
+                                          ↓                           ↑<br>
+                                        [工具] ←—— 支持 ————————<br>
+                                        <br>
+                                        三要素协同作用：<br>
+                                        方法论指导开发过程，工具支撑方法实施<br>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-item">
+                        <div class="topic-title">
+                            <span>★软件生命周期阶段</span>
+                        </div>
+                        <div class="topic-content hidden">
+                            <ul>
+                                <li><strong>定义阶段：</strong>可行性研究、需求分析</li>
+                                <li><strong>开发阶段：</strong>总体设计、详细设计、编码实现、测试</li>
+                                <li><strong>维护阶段：</strong>软件维护</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-item">
+                        <div class="topic-title">
+                            <span>★软件维护类型</span>
+                        </div>
+                        <div class="topic-content hidden">
+                            <ul>
+                                <li><strong>改正性维护：</strong>诊断和改正软件错误</li>
+                                <li><strong>适应性维护：</strong>适应环境变化</li>
+                                <li><strong>完善性维护：</strong>增加功能或改进性能（占比最多）</li>
+                                <li><strong>预防性维护：</strong>为未来可能的改变做准备</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-item">
+                        <div class="topic-title">
+                            <span>★模块独立性</span>
+                        </div>
+                        <div class="topic-content hidden">
+                            <ul>
+                                <li><strong>目标：</strong>高内聚、低耦合
+                                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                                        <li>高内聚例子：'用户登录'模块只包含验证用户名、密码和创建会话的功能</li>
+                                        <li>低耦合例子：计算器模块只依赖输入模块提供数字，不依赖其他模块</li>
+                                        <li>坏例子：用户管理模块既处理登录、又处理订单、还处理日志（低内聚）；模块A直接修改模块B的内部变量（高耦合）</li>
+                                        <li>类比：乐高积木，模块间连接简单（低耦合），每个积木块功能单一（高内聚）</li>
+                                    </ul>
+                                    <div style="margin-top: 0.5rem; padding: 0.5rem; background-color: #f9f9f9; border-left: 3px solid #3498db; font-family: monospace;">
+                                        <strong>模块独立性目标：</strong><br>
+                                        高内聚：┌─────────────────┐<br>
+                                               │  用户登录模块      │<br>
+                                               │  - 验证用户名     │<br>
+                                               │  - 验证密码       │<br>
+                                               │  - 创建会话       │<br>
+                                               └─────────────────┘<br>
+                                        低耦合：模块间依赖关系简单<br>
+                                    </div>
+                                </li>
+                                <li><strong>内聚类型（由高到低）：</strong>功能内聚、顺序内聚、通信内聚、过程内聚、时间内聚、逻辑内聚、偶然内聚
+                                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                                        <li><strong>功能内聚：</strong>模块完成单一功能
+                                            <ul style="margin-left: 1.5rem;">
+                                                <li>例子：计算圆面积模块只负责计算圆面积</li>
+                                                <li>优点：模块功能明确，易理解、易维护</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>顺序内聚：</strong>数据依次处理
+                                            <ul style="margin-left: 1.5rem;">
+                                                <li>例子：读取数据→处理数据→输出结果</li>
+                                                <li>优点：数据流清晰，处理有序</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>偶然内聚：</strong>模块元素无关联
+                                            <ul style="margin-left: 1.5rem;">
+                                                <li>例子：工具箱模块包含排序、打印、网络连接等多个无关功能</li>
+                                                <li>缺点：模块混乱，难以维护</li>
+                                            </ul>
+                                            <div style="margin-top: 0.5rem; padding: 0.5rem; background-color: #f9f9f9; border-left: 3px solid #3498db; font-family: monospace;">
+                                                <strong>内聚类型对比：</strong><br>
+                                                高 → 低<br>
+                                                功能内聚：[单一任务] ✓<br>
+                                                顺序内聚：[数据流处理] ✓<br>
+                                                通信内聚：[共享数据] △<br>
+                                                ...<br>
+                                                偶然内聚：[无关联功能] ✗<br>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><strong>耦合类型（由低到高）：</strong>非直接耦合、数据耦合、标记耦合、控制耦合、公共耦合、内容耦合
+                                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                                        <li><strong>数据耦合：</strong>通过参数传递数据
+                                            <ul style="margin-left: 1.5rem;">
+                                                <li>例子：函数调用时传递基本数据类型或简单结构</li>
+                                                <li>如：calculateArea(radius) // 只传递半径值</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>控制耦合：</strong>传递控制信号
+                                            <ul style="margin-left: 1.5rem;">
+                                                <li>例子：传递标志参数控制另一个模块的行为</li>
+                                                <li>如：processData(data, flag) // flag决定处理方式</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>内容耦合：</strong>一个模块直接访问另一模块内部
+                                            <ul style="margin-left: 1.5rem;">
+                                                <li>例子：模块A直接修改模块B的内部变量</li>
+                                                <li>后果：模块紧密绑定，修改一个会影响另一个</li>
+                                            </ul>
+                                            <div style="margin-top: 0.5rem; padding: 0.5rem; background-color: #f9f9f9; border-left: 3px solid #3498db; font-family: monospace;">
+                                                <strong>耦合类型对比：</strong><br>
+                                                低 → 高<br>
+                                                非直接耦合：无依赖 [最佳] ✓<br>
+                                                数据耦合：参数传递 [较好] △<br>
+                                                控制耦合：控制信号 [一般] ○<br>
+                                                内容耦合：直接访问内部 [最差] ✗<br>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-item">
+                        <div class="topic-title">
+                            <span>★测试方法</span>
+                        </div>
+                        <div class="topic-content hidden">
+                            <ul>
+                                <li><strong>黑盒测试：</strong>不考虑内部结构，测试功能
+                                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                                        <li>例子：测试登录功能，只关注输入用户名密码后是否能成功登录</li>
+                                        <li>例子：测试计算器，只验证输入2+3是否得到5，不关心内部如何计算</li>
+                                        <li>类比：测试微波炉，只看是否能加热食物，不看内部电路如何工作</li>
+                                        <li>关注点：输入-输出的正确性</li>
+                                    </ul>
+                                    <div style="margin-top: 0.5rem; padding: 0.5rem; background-color: #f9f9f9; border-left: 3px solid #3498db; font-family: monospace;">
+                                        <strong>黑盒测试示意图：</strong><br>
+                                        输入 → [系统] → 输出<br>
+                                              (不关心内部)<br>
+                                    </div>
+                                </li>
+                                <li><strong>白盒测试：</strong>考虑内部结构，测试逻辑路径
+                                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                                        <li>例子：测试一个判断成绩等级的函数，需要测试if-else的所有分支路径</li>
+                                        <li>例子：测试循环结构，确保循环边界条件正确</li>
+                                        <li>类比：检查汽车发动机，需要打开引擎盖看内部零件是否正常</li>
+                                        <li>关注点：代码的逻辑结构和执行路径</li>
+                                    </ul>
+                                    <div style="margin-top: 0.5rem; padding: 0.5rem; background-color: #f9f9f9; border-left: 3px solid #3498db; font-family: monospace;">
+                                        <strong>白盒测试示意图：</strong><br>
+                                        输入 → [if条件 → 循环 → 逻辑路径] → 输出<br>
+                                              ↑<br>
+                                         关注内部实现<br>
+                                    </div>
+                                </li>
+                                <li><strong>测试步骤：</strong>单元测试 → 集成测试 → 确认测试 → 系统测试
+                                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                                        <li><strong>单元测试：</strong>测试单个模块或函数
+                                            <ul style="margin-left: 1.5rem;">
+                                                <li>例子：测试一个排序函数是否能正确排序数组</li>
+                                                <li>开发者负责，通常使用JUnit等框架</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>集成测试：</strong>测试模块间接口和交互
+                                            <ul style="margin-left: 1.5rem;">
+                                                <li>例子：测试用户模块和订单模块之间的数据传递</li>
+                                                <li>确保模块组合后功能正确</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>确认测试：</strong>验证软件是否满足需求
+                                            <ul style="margin-left: 1.5rem;">
+                                                <li>例子：验证登录功能是否符合用户需求规格说明书</li>
+                                                <li>也称为验收测试</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>系统测试：</strong>测试整个系统
+                                            <ul style="margin-left: 1.5rem;">
+                                                <li>例子：在真实环境下测试整个电商系统的所有功能</li>
+                                                <li>验证系统在实际环境中的表现</li>
+                                            </ul>
+                                            <div style="margin-top: 0.5rem; padding: 0.5rem; background-color: #f9f9f9; border-left: 3px solid #3498db; font-family: monospace;">
+                                                <strong>测试步骤层次图：</strong><br>
+                                                系统测试 ────────────────────────────── [整个系统]<br>
+                                                  ↓<br>
+                                                集成测试 ─────── [模块间接口] ─────── [模块组合]<br>
+                                                  ↓<br>
+                                                单元测试 ── [单个模块/函数] ── [最小测试单位]<br>
+                                                <br>
+                                                确认测试 ────────────────── [需求验证] ── [用户视角]<br>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-item">
+                        <div class="topic-title">
+                            <span>★面向对象基本概念</span>
+                        </div>
+                        <div class="topic-content hidden">
+                            <ul>
+                                <li><strong>封装：</strong>将数据和操作封装在一起</li>
+                                <li><strong>继承：</strong>子类继承父类的属性和方法</li>
+                                <li><strong>多态：</strong>同一接口的不同实现</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-item">
+                        <div class="topic-title">
+                            <span>★考试重点提醒</span>
+                        </div>
+                        <div class="topic-content hidden">
+                            <ul>
+                                <li>掌握各章节的★标记知识点</li>
+                                <li>理解软件工程的基本原理和方法</li>
+                                <li>熟悉各种模型和图形的绘制方法</li>
+                                <li>理解不同开发方法的优缺点对比</li>
+                                <li>掌握测试策略和维护类型的应用</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p class="footer-content">软件工程导论复习系统 &copy; 2026</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" onclick="scrollToTop()" style="display: none;">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: 'ease-out'
+        });
+    </script>
+</body>
+</html>

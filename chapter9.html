@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第九章：<span style="color: red;">软件项目管理</span> - 软件工程导论复习系统</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <div class="decorative-circle decorative-circle-1"></div>
+    <div class="decorative-circle decorative-circle-2"></div>
+    
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-logo">软件工程复习</h1>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="keypoints.html" class="nav-link">复习重点</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="test.html" class="nav-link">测试练习</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+        
+        <main>
+            <section class="chapter-content">
+                <div class="content-container-wide">
+                    <h2 style="text-align: center; margin-bottom: 2rem; color: #2c3e50; font-size: 2.2rem;">第九章：<span style="color: red;">软件项目管理</span></h2>
+                    
+            <section class="mindmap-section">
+                <div class="container">
+                    <h2 class="section-title">第九章知识体系</h2>
+                    <div class="mindmap-container" id="mindmap-container">
+                        <div class="knowledge-map">
+                            <div class="central-node">
+                                <span style="color: red;">软件项目管理</span>
+                            </div>
+                            <div class="branch-connectors">
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                            </div>
+                            <div class="branch-level-1">
+                                <div class="branch-node branch-node-1">
+                                    <div class="node-icon"><i class="fas fa-users"></i></div>
+                                    <div class="node-content">人员管理</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">组织形式</div>
+                                        <div class="subnode"><span style="color: red;">团队建设</span></div>
+                                        <div class="subnode">沟通协调</div>
+                                        <div class="subnode">激励机制</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="branch-node branch-node-2">
+                                    <div class="node-icon"><i class="fas fa-calendar-alt"></i></div>
+                                    <div class="node-content">进度管理</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">进度计划</div>
+                                        <div class="subnode"><span style="color: red;">甘特图</span></div>
+                                        <div class="subnode"><span style="color: red;">网络图</span></div>
+                                        <div class="subnode"><span style="color: red;">里程碑</span></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="branch-node branch-node-3">
+                                    <div class="node-icon"><i class="fas fa-wallet"></i></div>
+                                    <div class="node-content">成本管理</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">成本估算</div>
+                                        <div class="subnode">成本预算</div>
+                                        <div class="subnode">成本控制</div>
+                                        <div class="subnode">定价策略</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="branch-node branch-node-4">
+                                    <div class="node-icon"><i class="fas fa-tasks"></i></div>
+                                    <div class="node-content">质量管理</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode"><span style="color: red;">质量保证</span></div>
+                                        <div class="subnode"><span style="color: red;">质量控制</span></div>
+                                        <div class="subnode">评审方法</div>
+                                        <div class="subnode">质量标准</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="branch-node branch-node-5">
+                                    <div class="node-icon"><i class="fas fa-shield-alt"></i></div>
+                                    <div class="node-content">风险管理</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode"><span style="color: red;">风险识别</span></div>
+                                        <div class="subnode"><span style="color: red;">风险评估</span></div>
+                                        <div class="subnode">风险应对</div>
+                                        <div class="subnode"><span style="color: red;">风险监控</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="chapter-content">
+                <div class="content-container-wide">
+                    <div class="topic-list">
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★软件危机</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p>定义：软件开发过程中遇到的各种问题和困难</p>
+                                <p><strong>表现：</strong></p>
+                                <ul>
+                                    <li>软件成本高：如IBM的System/360操作系统项目，预算1000万美元，最终花费超过5000万美元</li>
+                                    <li>软件质量差：程序存在大量错误，<span style="color: red;">可靠性</span>差，如早期的银行系统经常出现计算错误</li>
+                                    <li>开发进度难以控制：项目延期严重，如原定6个月完成的项目可能拖到2-3年</li>
+                                    <li>软件维护困难：代码难以理解，修改容易引入新错误</li>
+                                </ul>
+                                <p><strong>原因：</strong></p>
+                                <ul>
+                                    <li>需求不明确：用户需求频繁变更，开发过程中不断提出新要求</li>
+                                    <li>开发技术落后：缺乏有效的开发方法和工具</li>
+                                    <li>管理困难：项目缺乏有效计划和监控机制</li>
+                                    <li>缺乏正确的方法指导：没有规范的开发流程</li>
+                                </ul>
+                                <p><strong>生活化类比：</strong>软件危机就像建造房屋时没有设计图纸，工人边建边改，结果工期拖延、成本超支、质量低劣。</p>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★软件工程基本原理</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p>理解其核心思想和实践意义（共7条原理）</p>
+                                <p><strong>软件工程的7条基本原理：</strong></p>
+                                <ol>
+                                    <li>用分阶段的生命周期计划严格管理</li>
+                                    <li>坚持进行阶段评审</li>
+                                    <li>实行严格的产品控制</li>
+                                    <li>采用现代程序设计技术</li>
+                                    <li>结果应能清楚地审查</li>
+                                    <li>开发小组人员应少而精</li>
+                                    <li>承认不断改进软件工程实践的必要性</li>
+                                </ol>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★软件工程三要素</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p>方法、工具、过程</p>
+                                <ul>
+                                    <li><strong>方法：</strong>软件开发的方法论
+                                        <ul>
+                                            <li>例子：结构化分析设计方法、面向对象分析设计方法</li>
+                                            <li>类比：就像建筑中的施工方法（钢筋混凝土结构 vs 木结构）</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>工具：</strong>支持软件开发的工具
+                                        <ul>
+                                            <li>例子：需求分析工具（如Visio）、编码工具（如IDE）、测试工具（如JUnit）</li>
+                                            <li>类比：就像建筑中的工具（锤子、锯子、起重机）</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>过程：</strong>软件开发的步骤和流程
+                                        <ul>
+                                            <li>例子：瀑布模型、敏捷开发流程</li>
+                                            <li>类比：就像建筑中的施工流程（设计→打地基→建框架→装修）</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★软件工程方法</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p>传统软件工程方法 vs 面向对象软件工程方法</p>
+                                <p><strong>传统软件工程方法：</strong></p>
+                                <ul>
+                                    <li>以功能分解为核心</li>
+                                    <li>自顶向下设计</li>
+                                    <li>结构化分析和设计</li>
+                                </ul>
+                                <div style="margin-top: 0.5rem; padding: 0.5rem; background-color: #f9f9f9; border-left: 3px solid #3498db; font-family: monospace;">
+                                    <strong>传统方法示意图：</strong><br>
+                                    主任务<br>
+                                    ↓<br>
+                                    子任务1 ──→ 子任务2 ──→ 子任务3<br>
+                                    ↓              ↓              ↓<br>
+                                    功能1        功能2        功能3<br>
+                                </div>
+                                <p><strong>面向对象软件工程方法：</strong></p>
+                                <ul>
+                                    <li>以对象为核心</li>
+                                    <li>封装、继承、多态</li>
+                                    <li>更符合人类思维</li>
+                                </ul>
+                                <div style="margin-top: 0.5rem; padding: 0.5rem; background-color: #f9f9f9; border-left: 3px solid #3498db; font-family: monospace;">
+                                    <strong>面向对象方法示意图：</strong><br>
+                                    [对象1] ──→ [对象2] ──→ [对象3]<br>
+                                    ↓            ↓            ↓<br>
+                                    属性1      属性2      属性3<br>
+                                    方法1      方法2      方法3<br>
+                                    ↑<br>
+                                    封装<br>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★软件生命周期</span>
+                                <div class="toggle-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p>三大阶段：定义阶段、开发阶段、维护阶段</p>
+                                <p><strong>具体阶段：</strong></p>
+                                <ol>
+                                    <li>可行性研究</li>
+                                    <li>需求分析</li>
+                                    <li>总体设计</li>
+                                    <li>详细设计</li>
+                                    <li>编码实现</li>
+                                    <li>综合测试</li>
+                                    <li>维护</li>
+                                </ol>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★软件生命周期模型</span>
+                                <div class="toggle-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p>瀑布模型、快速原型模型、增量模型、螺旋模型、喷泉模型</p>
+                                <ul>
+                                    <li><strong>瀑布模型：</strong>阶段划分清晰，文档驱动
+                                        <ul>
+                                            <li>例子：大型系统开发，如银行核心系统、航空订票系统</li>
+                                            <li>类比：建造大楼，先设计图纸，再打地基，再建主体，最后装修</li>
+                                            <li>特点：每个阶段必须完成才能进入下一阶段</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>快速原型模型：</strong>适用于需求不明确的系统
+                                        <ul>
+                                            <li>例子：用户界面设计、移动应用原型开发</li>
+                                            <li>类比：先用粘土做一个简单的模型，让用户看是否满意，再用石材精雕细琢</li>
+                                            <li>特点：快速构建可运行的原型，让用户参与反馈</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>增量模型：</strong>逐步构建系统
+                                        <ul>
+                                            <li>例子：Office软件开发，先发布Word，再添加Excel、PowerPoint等模块</li>
+                                            <li>类比：盖房子先盖一个房间投入使用，再逐步增加其他房间</li>
+                                            <li>特点：将系统分解为多个增量，逐个开发和交付</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>螺旋模型：</strong>结合瀑布模型和快速原型模型
+                                        <ul>
+                                            <li>例子：大型复杂系统，如航空航天系统、军事软件</li>
+                                            <li>类比：像螺旋一样上升，每个循环都包含风险分析和原型开发</li>
+                                            <li>特点：强调风险分析，每个阶段都有<span style="color: red;">风险评估</span></li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>喷泉模型：</strong>适用于面向对象开发
+                                        <ul>
+                                            <li>例子：面向对象的图形编辑软件、游戏开发</li>
+                                            <li>类比：像喷泉的水流，循环往复，各阶段可以重叠和迭代</li>
+                                            <li>特点：开发过程具有迭代性和无缝性，各阶段可以并行进行</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★软件维护类型（4种）</span>
+                                <div class="toggle-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p>改正性维护、适应性维护、完善性维护、预防性维护</p>
+                                <ul>
+                                    <li><strong>改正性维护：</strong>诊断和改正软件错误（最基础）
+                                        <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                                            <li>例子：修复银行系统中的利息计算错误</li>
+                                            <li>例子：修正电商网站购物车计算总价的bug</li>
+                                            <li>特点：被动响应，修复已发现的错误</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>适应性维护：</strong>适应环境变化（如操作系统、接口变化）
+                                        <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                                            <li>例子：将旧系统从Windows Server 2003迁移到Windows Server 2019</li>
+                                            <li>例子：适配新的API接口，如微信支付接口升级</li>
+                                            <li>特点：主动适应环境变化</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>完善性维护：</strong>增加功能或改进性能（占比最多）
+                                        <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                                            <li>例子：在聊天软件中添加语音消息功能</li>
+                                            <li>例子：优化数据库查询速度，提升系统响应性能</li>
+                                            <li>特点：满足用户新增需求，提升用户体验</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>预防性维护：</strong>为未来可能的改变做准备
+                                        <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                                            <li>例子：重构老旧代码，提高代码可读性和<span style="color: red;">可维护性</span></li>
+                                            <li>例子：添加日志记录功能，便于未来排查问题</li>
+                                            <li>特点：前瞻性维护，防止未来可能出现的问题</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★<span style="color: red;"><span style="color: red;">软件项目管理</span>概述</span></span>
+                                <div class="toggle-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><strong><span style="color: red;">软件项目管理</span>的定义：</strong><span style="color: red;">软件项目管理</span>是为了使软件项目能够按照预定的成本、进度、质量顺利完成，而对成本、人员、进度、质量、风险等进行分析和管理的活动。</p>
+                                <p><strong>软件项目的特点：</strong></p>
+                                <ul>
+                                    <li><span style="color: red;">智力密集型</span>：高度依赖人的创造性思维</li>
+                                    <li><span style="color: red;">劳动密集型</span>：需要大量人力投入</li>
+                                    <li><span style="color: red;">产品无形性</span>：软件是逻辑产品，不可见</li>
+                                    <li><span style="color: red;">开发复杂性</span>：涉及多学科知识的综合应用</li>
+                                    <li><span style="color: red;">过程多变性</span>：需求变更频繁</li>
+                                </ul>
+                                <p><strong><span style="color: red;">软件项目管理</span>的重要性：</strong></p>
+                                <ul>
+                                    <li>提高项目成功率</li>
+                                    <li>控制成本和进度</li>
+                                    <li>保证产品质量</li>
+                                    <li>降低<span style="color: red;">项目风险</span></li>
+                                    <li>提高客户满意度</li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★<span style="color: red;">软件项目组织管理</span></span>
+                                <div class="toggle-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><strong>项目组织结构：</strong></p>
+                                <ul>
+                                    <li><strong><span style="color: red;">民主制程序员组</span>：</strong>
+                                        <ul>
+                                            <li>所有成员地位平等，共同决策</li>
+                                            <li>适合规模较小、技术水平较高的团队</li>
+                                            <li>优点：沟通效率高，成员积极性强</li>
+                                            <li>缺点：缺乏统一指挥，决策效率低</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong><span style="color: red;">主程序员组</span>：</strong>
+                                        <ul>
+                                            <li>由主程序员、后备程序员、编程秘书组成</li>
+                                            <li>主程序员负责主要设计和编码工作</li>
+                                            <li>适合技术复杂、质量要求高的项目</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong><span style="color: red;">层次式程序员组</span>：</strong>
+                                        <ul>
+                                            <li>设立组长，组员向组长汇报</li>
+                                            <li>适合规模较大、层次分明的项目</li>
+                                            <li>优点：权责明确，管理有序</li>
+                                            <li>缺点：沟通效率可能受影响</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p><strong><span style="color: red;">团队建设</span>：</strong></p>
+                                <ul>
+                                    <li>选择合适的团队成员</li>
+                                    <li>建立良好的团队文化</li>
+                                    <li>加强团队沟通与协作</li>
+                                    <li>设定明确的团队目标</li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★<span style="color: red;">软件项目进度管理</span></span>
+                                <div class="toggle-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><strong>进度计划制定：</strong></p>
+                                <ul>
+                                    <li>分解工作任务（<span style="color: red;">WBS</span> - <span style="color: red;">工作分解结构</span>）</li>
+                                    <li>估算工作量和持续时间</li>
+                                    <li>确定任务间的依赖关系</li>
+                                    <li>分配资源和人员</li>
+                                </ul>
+                                <p><strong>进度管理工具：</strong></p>
+                                <ul>
+                                    <li><strong><span style="color: red;">甘特图</span>（Gantt Chart）：</strong>
+                                        <ul>
+                                            <li>横轴表示时间，纵轴表示任务</li>
+                                            <li>用条状图显示任务的起止时间和持续时间</li>
+                                            <li>直观反映项目进度状况</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong><span style="color: red;">网络图</span>（<span style="color: red;">PERT</span>/<span style="color: red;">CPM</span>）：</strong>
+                                        <ul>
+                                            <li>节点表示事件，箭线表示活动</li>
+                                            <li>能够识别<span style="color: red;">关键路径</span></li>
+                                            <li>有助于优化项目时间安排</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong><span style="color: red;">里程碑</span>（Milestone）：</strong>
+                                        <ul>
+                                            <li>标志项目重要阶段的完成</li>
+                                            <li>便于项目监控和控制</li>
+                                            <li>提供项目进展的可见标志</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★<span style="color: red;">软件项目成本管理</span></span>
+                                <div class="toggle-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><strong>软件成本构成：</strong></p>
+                                <ul>
+                                    <li>人员费用：占总成本的60%-80%</li>
+                                    <li>软硬件设备费用</li>
+                                    <li>培训和支持费用</li>
+                                    <li>管理费用</li>
+                                </ul>
+                                <p><strong>成本估算方法：</strong></p>
+                                <ul>
+                                    <li><strong><span style="color: red;">专家估算法</span>：</strong>依靠专家经验进行估算</li>
+                                    <li><strong><span style="color: red;">类比估算法</span>：</strong>参考类似项目的成本数据</li>
+                                    <li><strong><span style="color: red;">算法模型法</span>：</strong>使用数学模型进行估算</li>
+                                    <li><strong><span style="color: red;">自下而上法</span>：</strong>逐项估算后汇总</li>
+                                </ul>
+                                <p><strong>常用的估算模型：</strong></p>
+                                <ul>
+                                    <li><strong><span style="color: red;">COCOMO模型</span>：</strong>构造性成本模型
+                                        <ul>
+                                            <li>基本COCOMO：静态单变量模型</li>
+                                            <li>中级COCOMO：考虑多个成本驱动因素</li>
+                                            <li>详细COCOMO：按软件生命周期各阶段分别估算</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong><span style="color: red;">Putnam模型</span>：</strong>动态多变量模型，基于工作量分布曲线</li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★<span style="color: red;">软件项目质量管理</span></span>
+                                <div class="toggle-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><strong>软件质量的特性：</strong></p>
+                                <ul>
+                                    <li><strong><span style="color: red;">功能性</span>：</strong>满足明确和隐含的需求能力</li>
+                                    <li><strong><span style="color: red;">可靠性</span>：</strong>在规定条件下维持性能水平的能力</li>
+                                    <li><strong><span style="color: red;">易用性</span>：</strong>用户使用软件的难易程度</li>
+                                    <li><strong><span style="color: red;">效率性</span>：</strong>在规定条件下性能水平与所用资源量的关系</li>
+                                    <li><strong><span style="color: red;">可维护性</span>：</strong>修改软件的难易程度</li>
+                                    <li><strong><span style="color: red;">可移植性</span>：</strong>从一个环境<span style="color: red;">转移</span>到另一个环境的能力</li>
+                                </ul>
+                                <p><strong>质量管理活动：</strong></p>
+                                <ul>
+                                    <li><strong><span style="color: red;">质量保证</span>（QA）：</strong>确保遵循合适开发标准和规程</li>
+                                    <li><strong><span style="color: red;">质量控制</span>（QC）：</strong>验证产品质量是否满足要求</li>
+                                    <li><strong><span style="color: red;">技术评审</span>：</strong>检查软件产品的质量</li>
+                                    <li><strong><span style="color: red;">代码走查</span>：</strong>检查代码质量和规范性</li>
+                                </ul>
+                                <p><strong>软件质量标准：</strong></p>
+                                <ul>
+                                    <li><span style="color: red;">ISO 9000</span>系列：国际质量管理体系标准</li>
+                                    <li><span style="color: red;">ISO/IEC 25000</span>系列：软件产品质量标准</li>
+                                    <li><span style="color: red;">CMM/CMMI</span>：软件能力成熟度模型</li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★<span style="color: red;">软件<span style="color: red;">项目风险</span>管理</span></span>
+                                <div class="toggle-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><strong>软件<span style="color: red;">项目风险</span>类型：</strong></p>
+                                <ul>
+                                    <li><strong><span style="color: red;">项目风险</span>：</strong>与项目管理和项目环境相关的风险
+                                        <ul>
+                                            <li>资金不足、进度延误、人员流失、需求变更等</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong><span style="color: red;">技术风险</span>：</strong>与软件开发技术和工具相关的风险
+                                        <ul>
+                                            <li>技术不成熟、性能不达标、接口不兼容等</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong><span style="color: red;">商业风险</span>：</strong>与市场和商业环境相关的风险
+                                        <ul>
+                                            <li>市场竞争、法律问题、销售策略等</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p><strong>风险管理过程：</strong></p>
+                                <ol>
+                                    <li><strong><span style="color: red;">风险识别</span>：</strong>识别潜在的风险来源</li>
+                                    <li><strong><span style="color: red;">风险评估</span>：</strong>分析风险的概率和影响程度</li>
+                                    <li><strong><span style="color: red;">风险规划</span>：</strong>制定风险应对策略</li>
+                                    <li><strong><span style="color: red;">风险控制</span>：</strong>实施风险缓解措施</li>
+                                    <li><strong><span style="color: red;">风险监控</span>：</strong>跟踪风险状态并更新</li>
+                                </ol>
+                                <p><strong>风险应对策略：</strong></p>
+                                <ul>
+                                    <li><strong><span style="color: red;">规避</span>：</strong>采取行动消除风险产生的条件</li>
+                                    <li><strong><span style="color: red;">转移</span>：</strong>将风险的影响<span style="color: red;">转移</span>到第三方</li>
+                                    <li><strong><span style="color: red;">减轻</span>：</strong>减少风险发生的概率或影响</li>
+                                    <li><strong><span style="color: red;">接受</span>：</strong><span style="color: red;">接受</span>风险的存在并准备应急计划</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <div class="container">
+                <p class="footer-content">软件工程导论复习系统 &copy; 2026</p>
+            </div>
+        </footer>
+
+        <button id="backToTop" onclick="scrollToTop()" style="display: none;">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+
+        <script src="js/main.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 1000,
+                once: true,
+                easing: 'ease-out'
+            });
+        </script>
+    </body>
+</html>
