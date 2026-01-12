@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第六章：详细设计 - 软件工程导论复习系统</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <div class="decorative-circle decorative-circle-1"></div>
+    <div class="decorative-circle decorative-circle-2"></div>
+    
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-logo">软件工程复习</h1>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="keypoints.html" class="nav-link">复习重点</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="test.html" class="nav-link">测试练习</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+        
+        <main>
+            <section class="chapter-content">
+                <div class="content-container-wide">
+                    <h2 style="text-align: center; margin-bottom: 2rem; color: #2c3e50; font-size: 2.2rem;">第六章：详细设计</h2>
+                    
+                    <div class="topic-list">
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★详细设计基本任务</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><span style="color: red;">详细设计</span>是软件设计的第二阶段，主要任务是为总体设计中制定的模块设计方案确定具体的实现<span style="color: red;">算法</span>和<span style="color: red;">数据结构</span></p>
+                                <p><strong>主要任务：</strong></p>
+                                <ul>
+                                    <li>为每个<span style="color: red;">模块</span>进行详细的<span style="color: red;">算法设计</span></li>
+                                    <li>为每个<span style="color: red;">模块</span>进行详细的<span style="color: red;">数据结构设计</span></li>
+                                    <li>确定<span style="color: red;">模块接口</span>的细节</li>
+                                    <li>设计<span style="color: red;">用户界面</span></li>
+                                    <li>编写<span style="color: red;">详细设计文档</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★过程设计工具</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p>用于描述<span style="color: red;">程序处理过程</span>的设计工具</p>
+                                <p><strong><span style="color: red;">程序流程图</span>：</strong>使用标准化符号表示<span style="color: red;">算法步骤</span></p>
+                                <ul>
+                                    <li>优点：直观、形象、易懂</li>
+                                    <li>缺点：不够严谨，容易造成非结构化程序</li>
+                                </ul>
+                                <p><strong><span style="color: red;">PAD图</span>（<span style="color: red;">Problem Analysis Diagram</span>）：</strong><span style="color: red;">问题分析图</span></p>
+                                <ul>
+                                    <li>优点：支持<span style="color: red;">结构化程序设计</span>，便于转换为<span style="color: red;">程序代码</span></li>
+                                    <li>缺点：对复杂问题的表示不如流程图直观</li>
+                                </ul>
+                                <p><strong><span style="color: red;">判定表</span>（<span style="color: red;">决策表</span>）：</strong>用于表示复杂的<span style="color: red;">条件组合</span>与应做的<span style="color: red;">动作</span></p>
+                                <ul>
+                                    <li>优点：能够清晰地表示复杂的<span style="color: red;">条件组合</span></li>
+                                    <li>缺点：当条件较多时，表格会变得庞大</li>
+                                </ul>
+                                <p><strong><span style="color: red;">判定树</span>（<span style="color: red;">决策树</span>）：</strong><span style="color: red;">判定表</span>的变形</p>
+                                <ul>
+                                    <li>优点：形式简洁，易于理解</li>
+                                    <li>缺点：节点间的对应关系不明显</li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★结构化程序设计</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p>一种<span style="color: red;">程序设计方法论</span>，强调使用结构化的<span style="color: red;">控制结构</span></p>
+                                <p><strong><span style="color: red;">三种基本结构</span>：</strong></p>
+                                <ul>
+                                    <li><strong><span style="color: red;">顺序结构</span>：</strong>按<span style="color: red;">语句顺序</span>依次执行</li>
+                                    <li><strong><span style="color: red;">选择结构</span>：</strong>根据<span style="color: red;">条件判断</span>选择执行路径</li>
+                                    <li><strong><span style="color: red;">重复结构</span>：</strong><span style="color: red;">循环</span>执行特定语句</li>
+                                </ul>
+                                <p><strong>特点：</strong></p>
+                                <ul>
+                                    <li>只有一个<span style="color: red;">入口</span>和一个<span style="color: red;">出口</span></li>
+                                    <li>没有<span style="color: red;">死循环</span></li>
+                                    <li>便于阅读和理解</li>
+                                    <li>便于验证和维护</li>
+                                </ul>
+                                <p><strong><span style="color: red;">GOTO语句</span>：</strong>应避免使用，因为它破坏程序的结构化特性</p>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★程序复杂度度量</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p>衡量<span style="color: red;">程序复杂性</span>的定量方法，主要用于预测软件的差错率、工作量和开发时间</p>
+                                <p><strong><span style="color: red;">环形复杂度</span>（<span style="color: red;">Cyclomatic Complexity</span>）：</strong>计算程序图中<span style="color: red;">独立路径数</span></p>
+                                <p><strong><span style="color: red;">计算方法</span>：</strong></p>
+                                <ul>
+                                    <li><strong><span style="color: red;">方法1</span>（<span style="color: red;">边-节点+2</span>）：</strong>V(G) = E - N + 2，其中E是<span style="color: red;">边数</span>，N是<span style="color: red;">节点数</span></li>
+                                    <li><strong><span style="color: red;">方法2</span>（<span style="color: red;">判定节点数+1</span>）：</strong>V(G) = P + 1，其中P是<span style="color: red;">判定节点数</span></li>
+                                    <li><strong><span style="color: red;">方法3</span>（<span style="color: red;">区域数</span>）：</strong><span style="color: red;">流图</span>中封闭区域数 + 1</li>
+                                </ul>
+                                <p><strong><span style="color: red;">应用</span>：</strong></p>
+                                <ul>
+                                    <li>程序复杂度越高，可靠性越低</li>
+                                    <li><span style="color: red;">复杂度</span>高的<span style="color: red;">模块</span>应重点测试</li>
+                                    <li>建议<span style="color: red;">模块</span>的<span style="color: red;">环形复杂度</span>不超过10</li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★<span style="color: red;">面向数据结构的设计方法</span></span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p>以<span style="color: red;">数据结构</span>作为程序设计的基础，代表方法是<span style="color: red;">Jackson方法</span></p>
+                                <p><strong><span style="color: red;">设计步骤</span>：</strong></p>
+                                <ul>
+                                    <li>分析<span style="color: red;">输入输出数据结构</span></li>
+                                    <li>确定<span style="color: red;">数据结构</span>的层次关系</li>
+                                    <li>根据<span style="color: red;">数据结构</span>导出<span style="color: red;">程序结构</span></li>
+                                    <li>精化<span style="color: red;">程序结构图</span></li>
+                                </ul>
+                                <p><strong>特点：</strong></p>
+                                <ul>
+                                    <li>适合于数据处理较多的<span style="color: red;">模块</span></li>
+                                    <li>设计结果结构清晰</li>
+                                    <li>与<span style="color: red;">数据结构</span>紧密结合</li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★<span style="color: red;">程序设计语言的选择</span></span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p>选择合适的<span style="color: red;">程序设计语言</span>对软件质量和开发效率至关重要</p>
+                                <p><strong><span style="color: red;">选择因素</span>：</strong></p>
+                                <ul>
+                                    <li><strong><span style="color: red;">应用领域</span>：</strong>如科学计算选用FORTRAN，系统编程选用C语言</li>
+                                    <li><strong><span style="color: red;">性能要求</span>：</strong>实时系统对效率要求高，选用C/C++</li>
+                                    <li><strong><span style="color: red;">软件运行环境</span>：</strong>嵌入式系统可能限制语言选择</li>
+                                    <li><strong><span style="color: red;">软件开发人员的熟练程度</span>：</strong>熟悉程度影响开发效率</li>
+                                    <li><strong><span style="color: red;">数据结构和算法的复杂性</span>：</strong>复杂数据结构适合面向对象语言</li>
+                                </ul>
+                                <p><strong><span style="color: red;">发展趋势</span>：</strong><span style="color: red;">高级语言</span>、<span style="color: red;">可视化编程</span>、<span style="color: red;">跨平台语言</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="mindmap-section">
+                <div class="container">
+                    <h2 class="section-title">第六章知识体系</h2>
+                    <div class="mindmap-container" id="mindmap-container">
+                        <div class="knowledge-map">
+                            <div class="central-node">
+                                详细设计
+                            </div>
+                            <div class="branch-connectors">
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                            </div>
+                            <div class="branch-level-1">
+                                <div class="branch-node branch-node-1">
+                                    <div class="node-icon"><i class="fas fa-tasks"></i></div>
+                                    <div class="node-content">基本任务</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">算法设计</div>
+                                        <div class="subnode">数据结构设计</div>
+                                        <div class="subnode">接口设计</div>
+                                        <div class="subnode">界面设计</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="branch-node branch-node-2">
+                                    <div class="node-icon"><i class="fas fa-project-diagram"></i></div>
+                                    <div class="node-content">过程设计工具</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">程序流程图</div>
+                                        <div class="subnode">PAD图</div>
+                                        <div class="subnode">判定表</div>
+                                        <div class="subnode">判定树</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="branch-node branch-node-3">
+                                    <div class="node-icon"><i class="fas fa-code"></i></div>
+                                    <div class="node-content">结构化程序设计</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">顺序结构</div>
+                                        <div class="subnode">选择结构</div>
+                                        <div class="subnode">重复结构</div>
+                                        <div class="subnode">避免GOTO语句</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="branch-node branch-node-4">
+                                    <div class="node-icon"><i class="fas fa-calculator"></i></div>
+                                    <div class="node-content">程序复杂度度量</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">环形复杂度</div>
+                                        <div class="subnode">边-节点+2</div>
+                                        <div class="subnode">判定节点数+1</div>
+                                        <div class="subnode">区域数法</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="branch-node branch-node-5">
+                                    <div class="node-icon"><i class="fas fa-laptop-code"></i></div>
+                                    <div class="node-content">语言选择</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">应用领域</div>
+                                        <div class="subnode">性能要求</div>
+                                        <div class="subnode">开发人员技能</div>
+                                        <div class="subnode">数据结构特点</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <div class="container">
+                <p class="footer-content">软件工程导论复习系统 &copy; 2026</p>
+            </div>
+        </footer>
+
+        <button id="backToTop" onclick="scrollToTop()" style="display: none;">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+
+        <script src="js/main.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 1000,
+                once: true,
+                easing: 'ease-out'
+            });
+            
+            // 确保思维导图也能正常初始化
+            if (document.getElementById('mindmap-container')) {
+                // 页面加载完成后初始化思维导图
+                window.addEventListener('load', function() {
+                    if (typeof initializeMindMap === 'function') {
+                        initializeMindMap();
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>

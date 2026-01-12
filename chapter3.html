@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第三章：需求分析 - 软件工程导论复习系统</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <div class="decorative-circle decorative-circle-1"></div>
+    <div class="decorative-circle decorative-circle-2"></div>
+    
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-logo">软件工程复习</h1>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="keypoints.html" class="nav-link">复习重点</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="test.html" class="nav-link">测试练习</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+        
+        <main>
+            <section class="chapter-content">
+                <div class="content-container-wide">
+                    <h2 style="text-align: center; margin-bottom: 2rem; color: #2c3e50; font-size: 2.2rem;">第三章：需求分析</h2>
+                    
+                    <section class="mindmap-section">
+                <div class="container">
+                    <h2 class="section-title">第三章知识体系</h2>
+                    <div class="mindmap-container" id="mindmap-container">
+                        <div class="knowledge-map">
+                            <div class="central-node">
+                                需求分析
+                            </div>
+                            <div class="branch-connectors">
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                            </div>
+                            <div class="branch-level-1">
+                                <div class="branch-node branch-node-1">
+                                    <div class="node-icon"><i class="fas fa-list"></i></div>
+                                    <div class="node-content">需求获取</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">用户访谈</div>
+                                        <div class="subnode">问卷调查</div>
+                                        <div class="subnode">观察用户</div>
+                                        <div class="subnode">联合会议</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="branch-node branch-node-2">
+                                    <div class="node-icon"><i class="fas fa-project-diagram"></i></div>
+                                    <div class="node-content">需求建模</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">数据流图</div>
+                                        <div class="subnode">实体关系图</div>
+                                        <div class="subnode">状态转换图</div>
+                                        <div class="subnode">数据字典</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="branch-node branch-node-3">
+                                    <div class="node-icon"><i class="fas fa-check-circle"></i></div>
+                                    <div class="node-content">需求验证</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">需求评审</div>
+                                        <div class="subnode">原型验证</div>
+                                        <div class="subnode">测试用例设计</div>
+                                        <div class="subnode">需求追踪</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="branch-node branch-node-4">
+                                    <div class="node-icon"><i class="fas fa-file-alt"></i></div>
+                                    <div class="node-content">需求规格说明</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">功能需求</div>
+                                        <div class="subnode">非功能需求</div>
+                                        <div class="subnode">接口需求</div>
+                                        <div class="subnode">约束条件</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="branch-node branch-node-5">
+                                    <div class="node-icon"><i class="fas fa-tasks"></i></div>
+                                    <div class="node-content">建模工具</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">DFD</div>
+                                        <div class="subnode">ERD</div>
+                                        <div class="subnode">STD</div>
+                                        <div class="subnode">DD</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+                    
+                    <div class="topic-list">
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★需求分析的任务</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><span style="color: red;">需求分析</span>是软件开发的第二个阶段，主要任务是准确理解用户需求并定义软件功能</p>
+                                <p><strong>主要任务：</strong></p>
+                                <ul>
+                                    <li><span style="color: red;">确定功能需求</span>：系统必须做什么</li>
+                                    <li><span style="color: red;">确定性能需求</span>：系统运行效率要求</li>
+                                    <li><span style="color: red;">确定接口需求</span>：系统与其他系统交互方式</li>
+                                    <li><span style="color: red;">确定约束条件</span>：开发限制和运行环境</li>
+                                    <li><span style="color: red;">数据需求分析</span>：系统需要处理的数据类型和量级</li>
+                                </ul>
+                                <p><strong>需求分析围绕着功能需求和性能需求</strong></p>
+                                <p><strong>需求分析建立的三个模型：</strong></p>
+                                <ul>
+                                    <li><span style="color: red;">数据模型</span>：描述系统的数据结构（如实体关系图ERD）</li>
+                                    <li><span style="color: red;">功能模型</span>：描述系统的功能流程（如数据流图DFD）</li>
+                                    <li><span style="color: red;">行为模型</span>：描述系统对外部事件的响应（如状态转换图STD）</li>
+                                </ul>
+                            </div>
+                        </div>
+                    
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★需求获取的方法</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><span style="color: red;">需求获取</span>是需求分析阶段的关键活动</p>
+                                <p><strong>主要方法：</strong></p>
+                                <ul>
+                                    <li><span style="color: red;">用户访谈</span>：一对一的深入交流</li>
+                                    <li><span style="color: red;">问卷调查</span>：收集大量用户的共性需求</li>
+                                    <li><span style="color: red;">现场观摩</span>：实地观察用户操作过程</li>
+                                    <li><span style="color: red;">联合会议</span>：与用户一起讨论需求（JAD技术）</li>
+                                    <li><span style="color: red;">原型法</span>：建立系统原型辅助需求确定</li>
+                                </ul>
+                            </div>
+                        </div>
+                    
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★需求分析的步骤</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><span style="color: red;">需求分析步骤</span>是系统化分析需求的方法</p>
+                                <p><strong>基本步骤：</strong></p>
+                                <ol>
+                                    <li><span style="color: red;">需求获取</span>：收集用户需求信息</li>
+                                    <li><span style="color: red;">需求提炼</span>：整理和分析收集到的信息</li>
+                                    <li><span style="color: red;">需求描述</span>：编写需求规格说明书</li>
+                                    <li><span style="color: red;">需求验证</span>：确认需求的正确性和完整性</li>
+                                </ol>
+                            </div>
+                        </div>
+                    
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★数据流图(DFD)</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><span style="color: red;">数据流图</span>是需求分析阶段常用的建模工具</p>
+                                <p><strong>基本符号：</strong></p>
+                                <ul>
+                                    <li><span style="color: red;">外部实体</span>：矩形（数据源点或终点）</li>
+                                    <li><span style="color: red;">加工/处理</span>：圆或椭圆（数据处理逻辑）</li>
+                                    <li><span style="color: red;">数据流</span>：箭头（数据流向）</li>
+                                    <li><span style="color: red;">数据存储</span>：双线段（数据保存位置）</li>
+                                </ul>
+                                <p><strong>画法原则：</strong>父图与子图平衡、数据守恒等</p>
+                            </div>
+                        </div>
+                    
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★数据字典</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><span style="color: red;">数据字典</span>是关于数据的信息的集合</p>
+                                <p><strong>包含内容：</strong></p>
+                                <ul>
+                                    <li><span style="color: red;">数据流条目</span>：定义数据流的组成</li>
+                                    <li><span style="color: red;">数据项条目</span>：定义数据项的类型、长度等</li>
+                                    <li><span style="color: red;">数据存储条目</span>：定义数据存储的结构</li>
+                                    <li><span style="color: red;">基本加工说明</span>：描述加工逻辑</li>
+                                </ul>
+                                <p><strong>作用：</strong>保证数据的一致性和准确性</p>
+                            </div>
+                        </div>
+                    
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★实体关系图(ERD)</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><span style="color: red;">实体关系图</span>用于描述数据对象之间的关系</p>
+                                <p><strong>基本要素：</strong></p>
+                                <ul>
+                                    <li><span style="color: red;">实体</span>：矩形表示</li>
+                                    <li><span style="color: red;">属性</span>：椭圆表示</li>
+                                    <li><span style="color: red;">关系</span>：菱形表示</li>
+                                </ul>
+                                <p><strong>作用：</strong>描述数据的静态特性</p>
+                            </div>
+                        </div>
+                    
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★状态转换图</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><span style="color: red;">状态转换图</span>描述系统对外部事件响应的行为模型</p>
+                                <p><strong>组成元素：</strong></p>
+                                <ul>
+                                    <li><span style="color: red;">状态</span>：系统在特定时刻的状况</li>
+                                    <li><span style="color: red;">转换条件</span>：引起状态变化的事件</li>
+                                    <li><span style="color: red;">行为</span>：状态转换时的处理动作</li>
+                                </ul>
+                                <p><strong>适用场景：</strong>实时控制系统、交互式应用等</p>
+                            </div>
+                        </div>
+                    
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★需求验证</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><span style="color: red;">需求验证</span>确保需求规格说明书正确无误</p>
+                                <p><strong>需求验证一般的四个方面：</strong></p>
+                                <ul>
+                                    <li><span style="color: red;">一致性</span>：需求之间不矛盾</li>
+                                    <li><span style="color: red;">完整性</span>：所有需求都已定义</li>
+                                    <li><span style="color: red;">现实性</span>：需求在限定条件下可实现</li>
+                                    <li><span style="color: red;">有效性</span>：需求对用户有价值</li>
+                                </ul>
+                                <p><strong>验证方法：</strong>需求评审、原型演示、开发测试用例等</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="mindmap-section">
+                <div class="container">
+                    <h2 class="section-title">第三章知识体系</h2>
+                    <div class="mindmap-container" id="mindmap-container">
+                        <div class="knowledge-map">
+                            <div class="central-node">
+                                需求分析
+                            </div>
+                            <div class="branch-connectors">
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                            </div>
+                            <div class="branch-level-1">
+                                <div class="branch-node branch-node-1">
+                                    <div class="node-icon"><i class="fas fa-question-circle"></i></div>
+                                    <div class="node-content">需求工程</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">需求获取</div>
+                                        <div class="subnode">需求分析</div>
+                                        <div class="subnode">需求规格说明</div>
+                                        <div class="subnode">需求验证</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="branch-node branch-node-2">
+                                    <div class="node-icon"><i class="fas fa-search"></i></div>
+                                    <div class="node-content">需求获取方法</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">用户访谈</div>
+                                        <div class="subnode">问卷调查</div>
+                                        <div class="subnode">现场观摩</div>
+                                        <div class="subnode">联合开发</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="branch-node branch-node-3">
+                                    <div class="node-icon"><i class="fas fa-file-alt"></i></div>
+                                    <div class="node-content">需求分析模型</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">数据模型</div>
+                                        <div class="subnode">功能模型</div>
+                                        <div class="subnode">行为模型</div>
+                                        <div class="subnode">状态转换图</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="branch-node branch-node-4">
+                                    <div class="node-icon"><i class="fas fa-check-circle"></i></div>
+                                    <div class="node-content">需求验证</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">一致性</div>
+                                        <div class="subnode">完整性</div>
+                                        <div class="subnode">现实性</div>
+                                        <div class="subnode">有效性</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="branch-node branch-node-5">
+                                    <div class="node-icon"><i class="fas fa-tasks"></i></div>
+                                    <div class="node-content">需求规格说明</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">功能需求</div>
+                                        <div class="subnode">性能需求</div>
+                                        <div class="subnode">接口需求</div>
+                                        <div class="subnode">约束条件</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <div class="container">
+                <p class="footer-content">软件工程导论复习系统 &copy; 2026</p>
+            </div>
+        </footer>
+
+        <button id="backToTop" onclick="scrollToTop()" style="display: none;">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+
+        <script src="js/main.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 1000,
+                once: true,
+                easing: 'ease-out'
+            });
+        </script>
+    </body>
+</html>

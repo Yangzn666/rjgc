@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第七章：软件测试 - 软件工程导论复习系统</title>
+    <link rel="stylesheet" href="/rjgc/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <div class="decorative-circle decorative-circle-1"></div>
+    <div class="decorative-circle decorative-circle-2"></div>
+    
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-logo">软件工程复习</h1>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="keypoints.html" class="nav-link">复习重点</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="test.html" class="nav-link">测试练习</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+        
+        <main>
+            <section class="chapter-content">
+                <div class="content-container-wide">
+                    <h2 style="text-align: center; margin-bottom: 2rem; color: #2c3e50; font-size: 2.2rem;">第七章：软件测试</h2>
+                    
+            <section class="mindmap-section">
+                <div class="container">
+                    <h2 class="section-title">第七章知识体系</h2>
+                    <div class="mindmap-container" id="mindmap-container">
+                        <div class="knowledge-map">
+                            <div class="central-node">
+                                软件测试
+                            </div>
+                            <div class="branch-connectors">
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                            </div>
+                            <div class="branch-level-1">
+                                <div class="branch-node branch-node-1">
+                                    <div class="node-icon"><i class="fas fa-bug"></i></div>
+                                    <div class="node-content">测试基础</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">测试目标</div>
+                                        <div class="subnode">测试原则</div>
+                                        <div class="subnode">测试过程</div>
+                                        <div class="subnode">测试分类</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="branch-node branch-node-2">
+                                    <div class="node-icon"><i class="fas fa-project-diagram"></i></div>
+                                    <div class="node-content">测试方法</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">白盒测试</div>
+                                        <div class="subnode">黑盒测试</div>
+                                        <div class="subnode">灰盒测试</div>
+                                        <div class="subnode">静态测试</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="branch-node branch-node-3">
+                                    <div class="node-icon"><i class="fas fa-layer-group"></i></div>
+                                    <div class="node-content">测试阶段</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">单元测试</div>
+                                        <div class="subnode">集成测试</div>
+                                        <div class="subnode">确认测试</div>
+                                        <div class="subnode">系统测试</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="branch-node branch-node-4">
+                                    <div class="node-icon"><i class="fas fa-vial"></i></div>
+                                    <div class="node-content">测试用例设计</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">等价类划分</div>
+                                        <div class="subnode">边界值分析</div>
+                                        <div class="subnode">因果图法</div>
+                                        <div class="subnode">错误推测法</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="branch-node branch-node-5">
+                                    <div class="node-icon"><i class="fas fa-tasks"></i></div>
+                                    <div class="node-content">测试管理</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">测试计划</div>
+                                        <div class="subnode">测试执行</div>
+                                        <div class="subnode">缺陷跟踪</div>
+                                        <div class="subnode">测试报告</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="chapter-content">
+                <div class="content-container-wide">
+                    <div class="topic-list">
+                            <div class="topic-content hidden">
+                                <p>定义：软件开发过程中遇到的各种问题和困难</p>
+                                <p><strong>表现：</strong></p>
+                                <ul>
+                                    <li>软件成本高：如IBM的System/360操作系统项目，预算1000万美元，最终花费超过5000万美元</li>
+                                    <li>软件质量差：程序存在大量错误，可靠性差，如早期的银行系统经常出现计算错误</li>
+                                    <li>开发进度难以控制：项目延期严重，如原定6个月完成的项目可能拖到2-3年</li>
+                                    <li>软件维护困难：代码难以理解，修改容易引入新错误</li>
+                                </ul>
+                                <p><strong>原因：</strong></p>
+                                <ul>
+                                    <li>需求不明确：用户需求频繁变更，开发过程中不断提出新要求</li>
+                                    <li>开发技术落后：缺乏有效的开发方法和工具</li>
+                                    <li>管理困难：项目缺乏有效计划和监控机制</li>
+                                    <li>缺乏正确的方法指导：没有规范的开发流程</li>
+                                </ul>
+                                <p><strong>生活化类比：</strong>软件危机就像建造房屋时没有设计图纸，工人边建边改，结果工期拖延、成本超支、质量低劣。</p>
+
+                            <div class="topic-content hidden">
+                                <p>理解其核心思想和实践意义（共7条原理）</p>
+                                <p><strong>软件工程的7条基本原理：</strong></p>
+                                <ol>
+                                    <li>用分阶段的生命周期计划严格管理</li>
+                                    <li>坚持进行阶段评审</li>
+                                    <li>实行严格的产品控制</li>
+                                    <li>采用现代程序设计技术</li>
+                                    <li>结果应能清楚地审查</li>
+                                    <li>开发小组人员应少而精</li>
+                                    <li>承认不断改进软件工程实践的必要性</li>
+                                </ol>
+
+                            <div class="topic-content hidden">
+                                <p>方法、工具、过程</p>
+                                <ul>
+                                    <li><strong>方法：</strong>软件开发的方法论
+                                        <ul>
+                                            <li>例子：结构化分析设计方法、面向对象分析设计方法</li>
+                                            <li>类比：就像建筑中的施工方法（钢筋混凝土结构 vs 木结构）</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>工具：</strong>支持软件开发的工具
+                                        <ul>
+                                            <li>例子：需求分析工具（如Visio）、编码工具（如IDE）、测试工具（如JUnit）</li>
+                                            <li>类比：就像建筑中的工具（锤子、锯子、起重机）</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>过程：</strong>软件开发的步骤和流程
+                                        <ul>
+                                            <li>例子：瀑布模型、敏捷开发流程</li>
+                                            <li>类比：就像建筑中的施工流程（设计→打地基→建框架→装修）</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                            <div class="topic-content hidden">
+                                <p>传统软件工程方法 vs 面向对象软件工程方法</p>
+                                <p><strong>传统软件工程方法：</strong></p>
+                                <ul>
+                                    <li>以功能分解为核心</li>
+                                    <li>自顶向下设计</li>
+                                    <li>结构化分析和设计</li>
+                                </ul>
+                                <div style="margin-top: 0.5rem; padding: 0.5rem; background-color: #f9f9f9; border-left: 3px solid #3498db; font-family: monospace;">
+                                    <strong>传统方法示意图：</strong><br>
+                                    主任务<br>
+                                    ↓<br>
+                                    子任务1 ──→ 子任务2 ──→ 子任务3<br>
+                                    ↓              ↓              ↓<br>
+                                    功能1        功能2        功能3<br>
+                                </div>
+                                <p><strong>面向对象软件工程方法：</strong></p>
+                                <ul>
+                                    <li>以对象为核心</li>
+                                    <li>封装、继承、多态</li>
+                                    <li>更符合人类思维</li>
+                                </ul>
+                                <div style="margin-top: 0.5rem; padding: 0.5rem; background-color: #f9f9f9; border-left: 3px solid #3498db; font-family: monospace;">
+                                    <strong>面向对象方法示意图：</strong><br>
+                                    [对象1] ──→ [对象2] ──→ [对象3]<br>
+                                    ↓            ↓            ↓<br>
+                                    属性1      属性2      属性3<br>
+                                    方法1      方法2      方法3<br>
+                                    ↑<br>
+                                    封装<br>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★软件生命周期</span>
+                                <div class="toggle-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p>三大阶段：定义阶段、开发阶段、维护阶段</p>
+                                <p><strong>具体阶段：</strong></p>
+                                <ol>
+                                    <li>可行性研究</li>
+                                    <li>需求分析</li>
+                                    <li>总体设计</li>
+                                    <li>详细设计</li>
+                                    <li>编码实现</li>
+                                    <li>综合测试</li>
+                                    <li>维护</li>
+                                </ol>
+
+                            <div class="topic-content hidden">
+                                <p>瀑布模型、快速原型模型、增量模型、螺旋模型、喷泉模型</p>
+                                <ul>
+                                    <li><strong>瀑布模型：</strong>阶段划分清晰，文档驱动
+                                        <ul>
+                                            <li>例子：大型系统开发，如银行核心系统、航空订票系统</li>
+                                            <li>类比：建造大楼，先设计图纸，再打地基，再建主体，最后装修</li>
+                                            <li>特点：每个阶段必须完成才能进入下一阶段</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>快速原型模型：</strong>适用于需求不明确的系统
+                                        <ul>
+                                            <li>例子：用户界面设计、移动应用原型开发</li>
+                                            <li>类比：先用粘土做一个简单的模型，让用户看是否满意，再用石材精雕细琢</li>
+                                            <li>特点：快速构建可运行的原型，让用户参与反馈</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>增量模型：</strong>逐步构建系统
+                                        <ul>
+                                            <li>例子：Office软件开发，先发布Word，再添加Excel、PowerPoint等模块</li>
+                                            <li>类比：盖房子先盖一个房间投入使用，再逐步增加其他房间</li>
+                                            <li>特点：将系统分解为多个增量，逐个开发和交付</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>螺旋模型：</strong>结合瀑布模型和快速原型模型
+                                        <ul>
+                                            <li>例子：大型复杂系统，如航空航天系统、军事软件</li>
+                                            <li>类比：像螺旋一样上升，每个循环都包含风险分析和原型开发</li>
+                                            <li>特点：强调风险分析，每个阶段都有风险评估</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>喷泉模型：</strong>适用于面向对象开发
+                                        <ul>
+                                            <li>例子：面向对象的图形编辑软件、游戏开发</li>
+                                            <li>类比：像喷泉的水流，循环往复，各阶段可以重叠和迭代</li>
+                                            <li>特点：开发过程具有迭代性和无缝性，各阶段可以并行进行</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                            <div class="topic-content hidden">
+                                <p>改正性维护、适应性维护、完善性维护、预防性维护</p>
+                                <ul>
+                                    <li><strong>改正性维护：</strong>诊断和改正软件错误（最基础）
+                                        <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                                            <li>例子：修复银行系统中的利息计算错误</li>
+                                            <li>例子：修正电商网站购物车计算总价的bug</li>
+                                            <li>特点：被动响应，修复已发现的错误</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>适应性维护：</strong>适应环境变化（如操作系统、接口变化）
+                                        <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                                            <li>例子：将旧系统从Windows Server 2003迁移到Windows Server 2019</li>
+                                            <li>例子：适配新的API接口，如微信支付接口升级</li>
+                                            <li>特点：主动适应环境变化</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>完善性维护：</strong>增加功能或改进性能（占比最多）
+                                        <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                                            <li>例子：在聊天软件中添加语音消息功能</li>
+                                            <li>例子：优化数据库查询速度，提升系统响应性能</li>
+                                            <li>特点：满足用户新增需求，提升用户体验</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>预防性维护：</strong>为未来可能的改变做准备
+                                        <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                                            <li>例子：重构老旧代码，提高代码可读性和可维护性</li>
+                                            <li>例子：添加日志记录功能，便于未来排查问题</li>
+                                            <li>特点：前瞻性维护，防止未来可能出现的问题</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★<span style="color: red;">软件测试的目标和原则</span></span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><strong><span style="color: red;">软件测试的目标</span>：</strong></p>
+                                <ul>
+                                    <li><span style="color: red;">发现软件中的错误和缺陷</span></li>
+                                    <li><span style="color: red;">验证软件是否满足需求规格说明书的要求</span></li>
+                                    <li><span style="color: red;">评估软件的质量和可靠性</span></li>
+                                    <li><span style="color: red;">确保软件能够在预定环境下正常运行</span></li>
+                                </ul>
+                                <p><strong><span style="color: red;">软件测试的原则</span>：</strong></p>
+                                <ul>
+                                    <li><span style="color: red;">尽早开始测试</span>：越早发现问题，修复成本越低</li>
+                                    <li><span style="color: red;">测试用例</span>必须明确预期结果</li>
+                                    <li><span style="color: red;">测试</span>应基于客户需求和规格说明</li>
+                                    <li><span style="color: red;">测试无法证明软件无错，只能证明有错</span></li>
+                                    <li><span style="color: red;">Pareto原则</span>：80%的错误可能来自20%的程序模块</li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★<span style="color: red;">测试方法分类</span></span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><strong><span style="color: red;">按测试技术分类</span>：</strong></p>
+                                <ul>
+                                    <li><strong>白盒测试：</strong>也称结构测试或逻辑驱动测试，基于程序内部结构进行测试
+                                        <ul>
+                                            <li><span style="color: red;">测试覆盖标准</span>：<span style="color: red;">语句覆盖</span>、<span style="color: red;">分支覆盖</span>、<span style="color: red;">条件覆盖</span>、<span style="color: red;">路径覆盖</span>等</li>
+                                            <li>主要关注程序内部逻辑结构</li>
+                                            <li>常用于<span style="color: red;">单元测试阶段</span></li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>黑盒测试：</strong>也称功能测试或数据驱动测试，只关心输入输出
+                                        <ul>
+                                            <li>不考虑程序内部结构，只根据<span style="color: red;">功能需求</span>进行测试</li>
+                                            <li>主要用于<span style="color: red;">集成测试</span>和<span style="color: red;">系统测试</span>阶段</li>
+                                            <li><span style="color: red;">测试用例</span>基于需求规格说明书设计</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p><strong><span style="color: red;">按测试执行阶段分类</span>：</strong></p>
+                                <ul>
+                                    <li><span style="color: red;">静态测试</span>：不执行程序，通过阅读代码、文档等方式发现错误</li>
+                                    <li><span style="color: red;">动态测试</span>：通过运行程序来检验程序行为和结果</li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★<span style="color: red;">软件测试的各个阶段</span></span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><strong><span style="color: red;">四个主要测试阶段</span>：</strong></p>
+                                <ol>
+                                    <li><strong><span style="color: red;">单元测试</span>（<span style="color: red;">模块测试</span>）：</strong>
+                                        <ul>
+                                            <li>针对单个<span style="color: red;">模块</span>进行测试</li>
+                                            <li>通常由程序员自己完成</li>
+                                            <li>主要使用<span style="color: red;">白盒测试技术</span></li>
+                                            <li>测试内容：<span style="color: red;">模块接口</span>、<span style="color: red;">局部数据结构</span>、<span style="color: red;">重要的执行路径</span>、<span style="color: red;">边界条件</span>、<span style="color: red;">出错处理</span></li>
+                                        </ul>
+                                    </li>
+                                    <li><strong><span style="color: red;">集成测试</span>（<span style="color: red;">组装测试</span>）：</strong>
+                                        <ul>
+                                            <li>将<span style="color: red;">模块</span>组装成系统的过程</li>
+                                            <li>两种策略：<span style="color: red;">非增量集成</span>和<span style="color: red;">增量集成</span></li>
+                                            <li><span style="color: red;">增量集成方式</span>：<span style="color: red;">自顶向下</span>、<span style="color: red;">自底向上</span>、<span style="color: red;">混合策略</span></li>
+                                        </ul>
+                                    </li>
+                                    <li><strong><span style="color: red;">确认测试</span>（<span style="color: red;">验收测试</span>）：</strong>
+                                        <ul>
+                                            <li><span style="color: red;">验证软件是否满足需求规格说明书的要求</span></li>
+                                            <li>以用户为主导，开发人员协助</li>
+                                            <li><span style="color: red;">Alpha测试</span>和<span style="color: red;">Beta测试</span></li>
+                                        </ul>
+                                    </li>
+                                    <li><strong><span style="color: red;">系统测试</span>：</strong>
+                                        <ul>
+                                            <li>将通过<span style="color: red;">确认测试</span>的软件与计算机硬件、外设、支撑软件等组合在一起进行测试</li>
+                                            <li>包括：<span style="color: red;">恢复测试</span>、<span style="color: red;">安全性测试</span>、<span style="color: red;">强度测试</span>、<span style="color: red;">性能测试</span>、<span style="color: red;">可靠性测试</span>等</li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★<span style="color: red;">测试用例设计技术</span></span>
+                                <div class="toggle-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><strong><span style="color: red;">黑盒测试用例设计技术</span>：</strong></p>
+                                <ul>
+                                    <li><strong><span style="color: red;">等价类划分</span>：</strong>
+                                        <ul>
+                                            <li>将输入域划分为若干<span style="color: red;">等价类</span></li>
+                                            <li>从每个<span style="color: red;">等价类</span>中选取一个代表值进行测试</li>
+                                            <li><span style="color: red;">有效等价类</span>和<span style="color: red;">无效等价类</span></li>
+                                        </ul>
+                                    </li>
+                                    <li><strong><span style="color: red;">边界值分析</span>：</strong>
+                                        <ul>
+                                            <li>在<span style="color: red;">等价类边界</span>及其相邻区域进行测试</li>
+                                            <li>大量错误发生在输入范围的<span style="color: red;">边界附近</span></li>
+                                            <li>测试<span style="color: red;">边界值</span>和<span style="color: red;">边界附近</span>的值</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong><span style="color: red;">因果图法</span>：</strong>
+                                        <ul>
+                                            <li>利用图解法分析<span style="color: red;">输入条件</span>的各种组合情况</li>
+                                            <li>适合于检查<span style="color: red;">输入条件</span>之间的相互制约关系</li>
+                                            <li>将<span style="color: red;">因果图</span>转换为<span style="color: red;">决策表</span>，再设计测试用例</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong><span style="color: red;">错误推测法</span>：</strong>
+                                        <ul>
+                                            <li>基于经验和直觉推测程序中可能存在的各种<span style="color: red;">错误</span></li>
+                                            <li>有针对性地设计<span style="color: red;">测试用例</span></li>
+                                            <li>常与其他<span style="color: red;">测试方法</span>结合使用</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★<span style="color: red;">调试</span>（<span style="color: red;">排错</span>）</span>
+                                <div class="toggle-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><span style="color: red;">调试</span>是在测试发现错误之后排除错误的过程。</p>
+                                <p><strong><span style="color: red;">调试的步骤</span>：</strong></p>
+                                <ol>
+                                    <li>从<span style="color: red;">错误征象</span>确定可能的出错位置</li>
+                                    <li>从<span style="color: red;">错误征象</span>追溯到错误根源</li>
+                                    <li>从<span style="color: red;">错误根源</span>消除错误</li>
+                                </ol>
+                                <p><strong><span style="color: red;">常用的调试方法</span>：</strong></p>
+                                <ul>
+                                    <li><strong><span style="color: red;">蛮力法</span>：</strong>通过计算机显示大量调试信息来排除错误</li>
+                                    <li><strong><span style="color: red;">回溯法</span>：</strong>沿着程序逻辑反向追踪源代码错误</li>
+                                    <li><strong><span style="color: red;">原因排除法</span>：</strong>通过对错误征象进行分析，列出可能的原因，逐一排除</li>
+                                </ul>
+                                <p><strong><span style="color: red;">测试与调试的区别</span>：</strong></p>
+                                <ul>
+                                    <li><span style="color: red;">测试</span>是为了发现问题，<span style="color: red;">调试</span>是为了定位和修复问题</li>
+                                    <li><span style="color: red;">测试</span>可以由独立的测试团队完成，<span style="color: red;">调试</span>通常由开发人员完成</li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★<span style="color: red;">软件测试策略</span></span>
+                                <div class="toggle-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><strong><span style="color: red;">测试策略的制定原则</span>：</strong></p>
+                                <ul>
+                                    <li>在有限的时间和资源下进行最有效的<span style="color: red;">测试</span></li>
+                                    <li>保证<span style="color: red;">测试</span>的全面性和针对性</li>
+                                    <li>优先<span style="color: red;">测试</span>最容易发生错误的部分</li>
+                                </ul>
+                                <p><strong><span style="color: red;">测试策略的关键要素</span>：</strong></p>
+                                <ul>
+                                    <li><strong><span style="color: red;">测试充分性</span>：</strong>确定何时停止测试</li>
+                                    <li><strong><span style="color: red;">测试覆盖标准</span>：</strong>衡量测试的完整性</li>
+                                    <li><strong><span style="color: red;">测试数据生成技术</span>：</strong>如何生成有效的测试数据</li>
+                                    <li><strong><span style="color: red;">测试评价标准</span>：</strong>如何评估测试结果</li>
+                                    <li><strong><span style="color: red;">测试管理技术</span>：</strong><span style="color: red;">测试过程</span>的组织和管理</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <div class="container">
+                <p class="footer-content">软件工程导论复习系统 &copy; 2026</p>
+            </div>
+        </footer>
+
+        <button id="backToTop" onclick="scrollToTop()" style="display: none;">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+
+        <script src="/rjgc/js/main.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 1000,
+                once: true,
+                easing: 'ease-out'
+            });
+        </script>
+    </body>
+</html>

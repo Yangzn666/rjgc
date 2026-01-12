@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第九章：面向对象方法学 - 软件工程导论复习系统</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <div class="decorative-circle decorative-circle-1"></div>
+    <div class="decorative-circle decorative-circle-2"></div>
+    
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-logo">软件工程复习</h1>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="keypoints.html" class="nav-link">复习重点</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="test.html" class="nav-link">测试练习</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+        
+        <main>
+            <section class="chapter-content">
+                <div class="content-container-wide">
+                    <h2 style="text-align: center; margin-bottom: 2rem; color: #2c3e50; font-size: 2.2rem;">第九章：面向对象方法学</h2>
+                    
+            <section class="mindmap-section">
+                <div class="container">
+                    <h2 class="section-title">第九章知识体系</h2>
+                    <div class="mindmap-container" id="mindmap-container">
+                        <div class="knowledge-map">
+                            <div class="central-node">
+                                面向对象方法学
+                            </div>
+                            <div class="branch-connectors">
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                            </div>
+                            <div class="branch-level-1">
+                                <div class="branch-node branch-node-1">
+                                    <div class="node-icon"><i class="fas fa-shapes"></i></div>
+                                    <div class="node-content">基本概念</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">对象</div>
+                                        <div class="subnode">类</div>
+                                        <div class="subnode">封装</div>
+                                        <div class="subnode">继承</div>
+                                        <div class="subnode">多态</div>
+                                    </div>
+                                </div>
+                                                            
+                                <div class="branch-node branch-node-2">
+                                    <div class="node-icon"><i class="fas fa-project-diagram"></i></div>
+                                    <div class="node-content">分析与设计</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">OOA</div>
+                                        <div class="subnode">OOD</div>
+                                        <div class="subnode">OOP</div>
+                                        <div class="subnode">UML建模</div>
+                                    </div>
+                                </div>
+                                                            
+                                <div class="branch-node branch-node-3">
+                                    <div class="node-icon"><i class="fas fa-object-group"></i></div>
+                                    <div class="node-content">设计原则</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">单一职责</div>
+                                        <div class="subnode">开闭原则</div>
+                                        <div class="subnode">里氏替换</div>
+                                        <div class="subnode">依赖倒置</div>
+                                    </div>
+                                </div>
+                                                            
+                                <div class="branch-node branch-node-4">
+                                    <div class="node-icon"><i class="fas fa-cogs"></i></div>
+                                    <div class="node-content">设计模式</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">创建型模式</div>
+                                        <div class="subnode">结构型模式</div>
+                                        <div class="subnode">行为型模式</div>
+                                        <div class="subnode">架构模式</div>
+                                    </div>
+                                </div>
+                                                            
+                                <div class="branch-node branch-node-5">
+                                    <div class="node-icon"><i class="fas fa-star"></i></div>
+                                    <div class="node-content">优点特性</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">模块化</div>
+                                        <div class="subnode">可重用</div>
+                                        <div class="subnode">可维护</div>
+                                        <div class="subnode">可扩展</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="chapter-content">
+                <div class="content-container-wide">
+                    <div class="topic-list">
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★面向对象方法学概述</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p>面向对象方法学是一种将现实世界中的事物抽象为对象，通过对象之间的交互来解决问题的软件开发方法。</p>
+                                <p><strong>面向对象方法学的特点：</strong></p>
+                                <ul>
+                                    <li>从问题域出发，将客观事物抽象为对象</li>
+                                    <li>将数据和对数据的操作封装在一起</li>
+                                    <li>强调软件的可重用性、可扩展性和可维护性</li>
+                                    <li>更接近人类的思维方式</li>
+                                </ul>
+                                <p><strong>面向对象方法学的优势：</strong></p>
+                                <ul>
+                                    <li>提高软件的可维护性</li>
+                                    <li>增强软件的可重用性</li>
+                                    <li>提高开发效率</li>
+                                    <li>降低软件开发和维护成本</li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★面向对象的基本概念</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><strong><span style="color: red;">对象(Object)</span>：</strong>系统中用来描述客观事物的一个实体，是构成系统的基本单位。</p>
+                                <ul>
+                                    <li>对象由一组属性和对这组属性进行操作的一组服务构成</li>
+                                    <li>对象 = 数据 + 算法</li>
+                                    <li>属性：描述对象特征的数据项</li>
+                                    <li>服务：对数据进行的操作</li>
+                                </ul>
+                                <p><strong><span style="color: red;">类(Class)</span>：</strong>具有相同属性和服务的一组对象的集合，是一个抽象的概念。</p>
+                                <ul>
+                                    <li>类是对一系列相似对象的抽象描述</li>
+                                    <li>对象是类的具体实例</li>
+                                    <li>类是对象的模板，对象是类的实例</li>
+                                </ul>
+                                <p><strong><span style="color: red;">封装(Encapsulation)</span>：</strong>把对象的属性和服务结合成一个独立的系统单位，并尽可能隐蔽对象的内部细节。</p>
+                                <ul>
+                                    <li>信息隐蔽是通过对象的封装性来实现的</li>
+                                    <li>对外提供访问接口，内部实现细节对外不可见</li>
+                                    <li>提高了系统的安全性和可维护性</li>
+                                </ul>
+                                <p><strong><span style="color: red;">继承(Inheritance)</span>：</strong>子类可以获得父类的属性和服务，也可以定义自己的属性和方法。</p>
+                                <ul>
+                                    <li>单继承：一个子类只有一个父类</li>
+                                    <li>多继承：一个子类可以有多个父类</li>
+                                    <li>提高了软件模块的可重用性和可扩充性</li>
+                                </ul>
+                                <p><strong><span style="color: red;">多态(Polymorphism)</span>：</strong>同一个操作作用于不同类的对象可以有不同的解释，产生不同的执行结果。</p>
+                                <ul>
+                                    <li>允许不同类的对象对同一消息做出响应</li>
+                                    <li>灵活性和可扩展性的体现</li>
+                                    <li>方法重载和方法重写都是多态的体现</li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★面向对象分析(OOA)</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><strong>面向对象分析的任务：</strong>运用面向对象方法进行需求分析，建立系统分析模型。</p>
+                                <p><strong>OOA的主要活动：</strong></p>
+                                <ol>
+                                    <li><span style="color: red;">识别对象，进行抽象分类</span></li>
+                                    <li><span style="color: red;">标识对象间的静态联系</span></li>
+                                    <li><span style="color: red;">定义对象的服务，标识对象间的动态联系</span></li>
+                                    <li><span style="color: red;">确定对象的操作方法</span></li>
+                                    <li><span style="color: red;">确定约束，给出说明</span></li>
+                                    <li><span style="color: red;">整理和修改模型</span></li>
+                                </ol>
+                                <p><strong>OOA模型：</strong></p>
+                                <ul>
+                                    <li><strong><span style="color: red;">对象模型</span>：</strong>描述系统的静态结构</li>
+                                    <li><strong><span style="color: red;">动态模型</span>：</strong>描述系统的交互序列</li>
+                                    <li><strong><span style="color: red;">功能模型</span>：</strong>描述系统的数据变换功能</li>
+                                </ul>
+                                <p><strong>OOA的特点：</strong></p>
+                                <ul>
+                                    <li><span style="color: red;">从现实世界中的实体出发认识问题</span></li>
+                                    <li><span style="color: red;">建立的分析模型易于理解和交流</span></li>
+                                    <li><span style="color: red;">分析模型对需求的变化具有较强的适应性</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★面向对象设计(OOD)</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><strong>面向对象设计的任务：</strong>在OOA模型的基础上，对分析模型进行补充和完善，形成设计模型。</p>
+                                <p><strong>OOD的主要内容：</strong></p>
+                                <ul>
+                                    <li><span style="color: red;">问题域部分设计</span></li>
+                                    <li><span style="color: red;">人机交互部分设计</span></li>
+                                    <li><span style="color: red;">任务管理部分设计</span></li>
+                                    <li><span style="color: red;">数据管理部分设计</span></li>
+                                </ul>
+                                <p><strong>OOD设计准则：</strong></p>
+                                <ul>
+                                    <li><strong><span style="color: red;">抽象</span>：</strong>抽取事物的本质特征</li>
+                                    <li><strong><span style="color: red;">信息隐蔽</span>：</strong>对象的实现细节对外部是隐蔽的</li>
+                                    <li><strong><span style="color: red;">功能独立</span>：</strong>对象的内部关联要尽量紧密</li>
+                                    <li><strong><span style="color: red;">一致性</span>：</strong>设计应保持内在的一致性</li>
+                                    <li><strong><span style="color: red;">完备性</span>：</strong>设计应能完全表达问题空间的需求</li>
+                                </ul>
+                                <p><strong>OOD设计风格：</strong></p>
+                                <ul>
+                                    <li><span style="color: red;">对象类粒度适中</span></li>
+                                    <li><span style="color: red;">继承层次适当</span></li>
+                                    <li><span style="color: red;">消息关联尽量简单</span></li>
+                                    <li><span style="color: red;">对象间耦合程度要低</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★面向对象编程(OOP)</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><strong>面向对象编程的特点：</strong></p>
+                                <ul>
+                                    <li><strong><span style="color: red;">封装性</span>：</strong>将数据和操作数据的方法绑定在一起</li>
+                                    <li><strong><span style="color: red;">继承性</span>：</strong>子类可以继承父类的属性和方法</li>
+                                    <li><strong><span style="color: red;">多态性</span>：</strong>同一个接口可以有不同的实现</li>
+                                </ul>
+                                <p><strong>常用面向对象编程语言：</strong></p>
+                                <ul>
+                                    <li>C++：在C语言基础上增加了面向对象特性</li>
+                                    <li>Java：纯面向对象编程语言，跨平台性强</li>
+                                    <li>C#：微软开发的面向对象语言</li>
+                                    <li>Python：支持多种编程范式，包括面向对象</li>
+                                </ul>
+                                <p><strong>OOP的优点：</strong></p>
+                                <ul>
+                                    <li><span style="color: red;">可重用性高</span></li>
+                                    <li><span style="color: red;">可维护性好</span></li>
+                                    <li><span style="color: red;">可扩展性强</span></li>
+                                    <li><span style="color: red;">代码可读性好</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★UML统一建模语言</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><strong>UML概述：</strong>Unified Modeling Language，是一种通用的可视化建模语言，用于软件密集型系统的分析、设计和构造。</p>
+                                <p><strong>UML图的分类：</strong></p>
+                                <ul>
+                                    <li><strong><span style="color: red;">结构图</span>：</strong>描述系统的静态结构
+                                        <ul>
+                                            <li><span style="color: red;">类图</span>：描述类、接口以及它们之间的关系</li>
+                                            <li><span style="color: red;">对象图</span>：表示类的对象实例</li>
+                                            <li><span style="color: red;">组件图</span>：描述组件及其依赖关系</li>
+                                            <li><span style="color: red;">部署图</span>：描述系统中硬件和软件的物理配置</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong><span style="color: red;">行为图</span>：</strong>描述系统的动态行为
+                                        <ul>
+                                            <li><span style="color: red;">用例图</span>：描述系统功能及参与者与系统的关系</li>
+                                            <li><span style="color: red;">活动图</span>：描述业务流程或操作的工作流程</li>
+                                            <li><span style="color: red;">状态图</span>：描述对象的状态转换</li>
+                                            <li><span style="color: red;">序列图</span>：描述对象间的交互序列</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p><strong>UML的优势：</strong></p>
+                                <ul>
+                                    <li><span style="color: red;">标准化的建模语言</span></li>
+                                    <li><span style="color: red;">可视化程度高</span></li>
+                                    <li><span style="color: red;">与具体实现无关</span></li>
+                                    <li><span style="color: red;">支持面向对象的分析、设计和实现</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★面向对象建模技术3种模型之间的三种关系</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p>面向对象建模技术中建立的三种模型（对象模型、动态模型、功能模型）之间存在密切的关系。</p>
+                                <p><strong>三种模型的定义：</strong></p>
+                                <ul>
+                                    <li><strong>对象模型：</strong>描述系统的静态结构，即系统中各类以及它们之间的关系</li>
+                                    <li><strong>动态模型：</strong>描述系统中对象之间的交互序列，即系统的行为</li>
+                                    <li><strong>功能模型：</strong>描述系统中数据的变换功能，即系统的功能</li>
+                                </ul>
+                                <p><strong>三种模型之间的关系：</strong></p>
+                                <ul>
+                                    <li><strong>对象模型是最基础的模型</strong>：定义了系统中的对象和它们之间的关系，是其他两个模型的基础</li>
+                                    <li><strong>动态模型描述对象的行为</strong>：定义了对象在系统生命期中行为的改变，描述了对象之间的交互</li>
+                                    <li><strong>功能模型描述对象的功能</strong>：描述了数据在系统中的流动和变换，即对象所提供的功能</li>
+                                    <li><strong>三个模型相互补充</strong>：从不同角度描述系统，共同构成完整的系统模型</li>
+                                </ul>
+                                <p><strong>建模顺序：</strong>通常先建立对象模型，再建立动态模型，最后建立功能模型。</p>
+                            </div>
+                        </div>
+                    
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★<span style="color: red;"><span style="color: red;">软件项目管理</span>概述</span></span>
+                                <div class="toggle-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><strong><span style="color: red;">软件项目管理</span>的定义：</strong><span style="color: red;">软件项目管理</span>是为了使软件项目能够按照预定的成本、进度、质量顺利完成，而对成本、人员、进度、质量、风险等进行分析和管理的活动。</p>
+                                <p><strong>软件项目的特点：</strong></p>
+                                <ul>
+                                    <li><span style="color: red;">智力密集型</span>：高度依赖人的创造性思维</li>
+                                    <li><span style="color: red;">劳动密集型</span>：需要大量人力投入</li>
+                                    <li><span style="color: red;">产品无形性</span>：软件是逻辑产品，不可见</li>
+                                    <li><span style="color: red;">开发复杂性</span>：涉及多学科知识的综合应用</li>
+                                    <li><span style="color: red;">过程多变性</span>：需求变更频繁</li>
+                                </ul>
+                                <p><strong><span style="color: red;">软件项目管理</span>的重要性：</strong></p>
+                                <ul>
+                                    <li>提高项目成功率</li>
+                                    <li>控制成本和进度</li>
+                                    <li>保证产品质量</li>
+                                    <li>降低<span style="color: red;">项目风险</span></li>
+                                    <li>提高客户满意度</li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★<span style="color: red;">软件项目组织管理</span></span>
+                                <div class="toggle-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><strong>项目组织结构：</strong></p>
+                                <ul>
+                                    <li><strong><span style="color: red;">民主制程序员组</span>：</strong>
+                                        <ul>
+                                            <li>所有成员地位平等，共同决策</li>
+                                            <li>适合规模较小、技术水平较高的团队</li>
+                                            <li>优点：沟通效率高，成员积极性强</li>
+                                            <li>缺点：缺乏统一指挥，决策效率低</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong><span style="color: red;">主程序员组</span>：</strong>
+                                        <ul>
+                                            <li>由主程序员、后备程序员、编程秘书组成</li>
+                                            <li>主程序员负责主要设计和编码工作</li>
+                                            <li>适合技术复杂、质量要求高的项目</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong><span style="color: red;">层次式程序员组</span>：</strong>
+                                        <ul>
+                                            <li>设立组长，组员向组长汇报</li>
+                                            <li>适合规模较大、层次分明的项目</li>
+                                            <li>优点：权责明确，管理有序</li>
+                                            <li>缺点：沟通效率可能受影响</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p><strong><span style="color: red;">团队建设</span>：</strong></p>
+                                <ul>
+                                    <li>选择合适的团队成员</li>
+                                    <li>建立良好的团队文化</li>
+                                    <li>加强团队沟通与协作</li>
+                                    <li>设定明确的团队目标</li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★<span style="color: red;">软件项目进度管理</span></span>
+                                <div class="toggle-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><strong>进度计划制定：</strong></p>
+                                <ul>
+                                    <li>分解工作任务（<span style="color: red;">WBS</span> - <span style="color: red;">工作分解结构</span>）</li>
+                                    <li>估算工作量和持续时间</li>
+                                    <li>确定任务间的依赖关系</li>
+                                    <li>分配资源和人员</li>
+                                </ul>
+                                <p><strong>进度管理工具：</strong></p>
+                                <ul>
+                                    <li><strong><span style="color: red;">甘特图</span>（Gantt Chart）：</strong>
+                                        <ul>
+                                            <li>横轴表示时间，纵轴表示任务</li>
+                                            <li>用条状图显示任务的起止时间和持续时间</li>
+                                            <li>直观反映项目进度状况</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong><span style="color: red;">网络图</span>（<span style="color: red;">PERT</span>/<span style="color: red;">CPM</span>）：</strong>
+                                        <ul>
+                                            <li>节点表示事件，箭线表示活动</li>
+                                            <li>能够识别<span style="color: red;">关键路径</span></li>
+                                            <li>有助于优化项目时间安排</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong><span style="color: red;">里程碑</span>（Milestone）：</strong>
+                                        <ul>
+                                            <li>标志项目重要阶段的完成</li>
+                                            <li>便于项目监控和控制</li>
+                                            <li>提供项目进展的可见标志</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★<span style="color: red;">软件项目成本管理</span></span>
+                                <div class="toggle-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><strong>软件成本构成：</strong></p>
+                                <ul>
+                                    <li>人员费用：占总成本的60%-80%</li>
+                                    <li>软硬件设备费用</li>
+                                    <li>培训和支持费用</li>
+                                    <li>管理费用</li>
+                                </ul>
+                                <p><strong>成本估算方法：</strong></p>
+                                <ul>
+                                    <li><strong><span style="color: red;">专家估算法</span>：</strong>依靠专家经验进行估算</li>
+                                    <li><strong><span style="color: red;">类比估算法</span>：</strong>参考类似项目的成本数据</li>
+                                    <li><strong><span style="color: red;">算法模型法</span>：</strong>使用数学模型进行估算</li>
+                                    <li><strong><span style="color: red;">自下而上法</span>：</strong>逐项估算后汇总</li>
+                                </ul>
+                                <p><strong>常用的估算模型：</strong></p>
+                                <ul>
+                                    <li><strong><span style="color: red;">COCOMO模型</span>：</strong>构造性成本模型
+                                        <ul>
+                                            <li>基本COCOMO：静态单变量模型</li>
+                                            <li>中级COCOMO：考虑多个成本驱动因素</li>
+                                            <li>详细COCOMO：按软件生命周期各阶段分别估算</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong><span style="color: red;">Putnam模型</span>：</strong>动态多变量模型，基于工作量分布曲线</li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★面向对象方法学的优点与缺点</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p>面向对象方法学作为一种重要的软件开发方法，具有明显的优点和一定的局限性。</p>
+                                <p><strong>面向对象方法学的优点：</strong></p>
+                                <ul>
+                                    <li><strong>可重用性高</strong>：通过继承和封装，可以在新项目中重用已有代码</li>
+                                    <li><strong>可维护性好</strong>：封装性使得修改局部不会影响整体系统</li>
+                                    <li><strong>可扩展性强</strong>：通过继承和多态，可以方便地扩展系统功能</li>
+                                    <li><strong>开发效率高</strong>：利用现成的类库和框架，加速开发过程</li>
+                                    <li><strong>更接近人类思维方式</strong>：符合人们对客观世界的认知习惯</li>
+                                    <li><strong>信息隐蔽性好</strong>：通过封装隐藏实现细节，只暴露必要的接口</li>
+                                </ul>
+                                <p><strong>面向对象方法学的缺点：</strong></p>
+                                <ul>
+                                    <li><strong>学习曲线陡峭</strong>：需要掌握面向对象的概念和设计原则</li>
+                                    <li><strong>对开发人员要求较高</strong>：需要具备良好的抽象思维能力</li>
+                                    <li><strong>前期设计投入较大</strong>：需要仔细设计类结构和关系</li>
+                                    <li><strong>对于某些问题域不太适用</strong>：如系统级编程、算法密集型应用</li>
+                                </ul>
+                                <p><strong>与传统方法学的比较：</strong></p>
+                                <ul>
+                                    <li>传统方法以功能分解为核心，面向对象方法以对象为核心</li>
+                                    <li>传统方法自顶向下设计，面向对象方法更注重对象间的关系</li>
+                                    <li>传统方法使用结构化分析和设计，面向对象方法使用面向对象分析和设计</li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★面向对象方法学的应用与发展</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p>面向对象方法学在现代软件开发中有着广泛的应用，并且不断发展演进。</p>
+                                <p><strong>面向对象方法学的应用领域：</strong></p>
+                                <ul>
+                                    <li><strong>企业级应用开发</strong>：如ERP、CRM等大型管理系统</li>
+                                    <li><strong>Web应用程序开发</strong>：现代Web框架多采用面向对象设计</li>
+                                    <li><strong>移动应用开发</strong>：Android、iOS平台开发都基于面向对象</li>
+                                    <li><strong>桌面应用程序</strong>：GUI应用多采用面向对象的事件驱动模型</li>
+                                    <li><strong>游戏开发</strong>：游戏中角色、道具等天然适合面向对象建模</li>
+                                </ul>
+                                <p><strong>面向对象方法学的发展趋势：</strong></p>
+                                <ul>
+                                    <li><strong>组件化开发</strong>：发展为基于组件的软件开发（CBD）</li>
+                                    <li><strong>模型驱动开发</strong>：发展为模型驱动架构（MDA）</li>
+                                    <li><strong>领域驱动设计</strong>：更注重业务领域的建模</li>
+                                    <li><strong>函数式编程融合</strong>：与函数式编程理念相结合</li>
+                                </ul>
+                                <p><strong>面向对象与其他技术的结合：</strong></p>
+                                <ul>
+                                    <li>与设计模式结合，提高代码质量</li>
+                                    <li>与UML建模语言结合，提高分析设计效率</li>
+                                    <li>与敏捷开发方法结合，提高开发效率</li>
+                                    <li>与微服务架构结合，构建分布式系统</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <div class="container">
+                <p class="footer-content">软件工程导论复习系统 &copy; 2026</p>
+            </div>
+        </footer>
+
+        <button id="backToTop" onclick="scrollToTop()" style="display: none;">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+
+        <script src="js/main.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 1000,
+                once: true,
+                easing: 'ease-out'
+            });
+        </script>
+    </body>
+</html>

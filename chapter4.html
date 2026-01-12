@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第四章：概要设计 - 软件工程导论复习系统</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <div class="decorative-circle decorative-circle-1"></div>
+    <div class="decorative-circle decorative-circle-2"></div>
+    
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-logo">软件工程复习</h1>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="keypoints.html" class="nav-link">复习重点</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="test.html" class="nav-link">测试练习</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+        
+        <main>
+            <section class="chapter-content">
+                <div class="content-container-wide">
+                    <h2 style="text-align: center; margin-bottom: 2rem; color: #2c3e50; font-size: 2.2rem;">第四章：概要设计（总体设计）</h2>
+                    
+                    <div class="topic-list">
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★概要设计基本任务</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p><span style="color: red;">概要设计</span>（<span style="color: red;">总体设计</span>）的基本任务是将需求分析得到的逻辑模型转换为软件系统的物理模型</p>
+                                <p><strong><span style="color: red;">设计的原理（模块化）</span>：</strong>将复杂问题分解为若干相对简单的子问题，分别解决</p>
+                                <p><strong>主要任务：<span style="color: red;">总体结构设计</span>、<span style="color: red;">数据结构设计</span>、<span style="color: red;">接口设计</span>、<span style="color: red;">处理流程设计</span></strong></p>
+                                <ul>
+                                    <li>设计软件的<span style="color: red;">总体结构</span></li>
+                                    <li>设计全局<span style="color: red;">数据结构</span></li>
+                                    <li>设计<span style="color: red;">用户界面</span></li>
+                                    <li>制定<span style="color: red;">测试计划</span></li>
+                                </ul>
+                                <p><strong>核心问题：</strong>确定系统如何实现，回答"怎么做"的问题</p>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★模块化设计原理</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p>将复杂任务分解为小的子任务，降低系统复杂度</p>
+                                <p><strong><span style="color: red;">模块化原理</span>：</strong></p>
+                                <ul>
+                                    <li>把复杂问题分解为若干<span style="color: red;">简单问题</span></li>
+                                    <li>降低<span style="color: red;">开发和维护成本</span></li>
+                                    <li>提高系统的<span style="color: red;">可理解性</span></li>
+                                    <li>便于<span style="color: red;">分工协作开发</span></li>
+                                </ul>
+                                <p><strong><span style="color: red;">抽象</span>和<span style="color: red;">逐步求精</span>：</strong>关注<span style="color: red;">大任务</span>，忽略<span style="color: red;">小细节</span></p>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★模块独立性</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p>衡量模块好坏的重要标准</p>
+                                <p><strong><span style="color: red;">耦合</span>（<span style="color: red;">Coupling</span>）：</strong>模块间相互依赖程度</p>
+                                <ul>
+                                    <li><span style="color: red;">非直接耦合</span>：模块间没有直接关系</li>
+                                    <li><span style="color: red;">数据耦合</span>：通过参数传递数据</li>
+                                    <li><span style="color: red;">标记耦合</span>：通过数据结构传递数据</li>
+                                    <li><span style="color: red;">控制耦合</span>：通过控制信号传递信息</li>
+                                    <li><span style="color: red;">公共耦合</span>：共享全局数据</li>
+                                    <li><span style="color: red;">内容耦合</span>：一个模块直接访问另一模块内部</li>
+                                </ul>
+                                <p><strong><span style="color: red;">内聚</span>（<span style="color: red;">Cohesion</span>）：</strong>模块内部元素关联程度</p>
+                                <ul>
+                                    <li><span style="color: red;">功能内聚</span>：模块只完成一个功能</li>
+                                    <li><span style="color: red;">顺序内聚</span>：模块内的处理元素相关且顺序执行</li>
+                                    <li><span style="color: red;">通信内聚</span>：模块内的处理元素使用相同输入数据或产生相同输出数据</li>
+                                    <li><span style="color: red;">过程内聚</span>：模块内的处理元素属于相同流程</li>
+                                    <li><span style="color: red;">时间内聚</span>：模块内的处理元素在同一时间段内执行</li>
+                                    <li><span style="color: red;">逻辑内聚</span>：模块内的处理元素逻辑相似</li>
+                                    <li><span style="color: red;">偶然内聚</span>：模块内的处理元素无关联</li>
+                                </ul>
+                                <p><strong>目标：</strong><span style="color: red;">高内聚</span>、<span style="color: red;">低耦合</span></p>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★<span style="color: red;">面向数据流的设计方法</span></span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p>将数据流图转换为软件结构图的方法</p>
+                                <p><strong>两种类型的数据流图：</strong></p>
+                                <ul>
+                                    <li><strong><span style="color: red;">变换型数据流</span>：</strong>数据从输入经过变换处理再输出</li>
+                                        <ul>
+                                            <li>识别<span style="color: red;">输入</span>、<span style="color: red;">变换</span>、<span style="color: red;">输出</span>三部分</li>
+                                            <li>设计主模块结构</li>
+                                            <li>逐步细化各子模块</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong><span style="color: red;">事务型数据流</span>：</strong>接收数据并根据类型分发给不同处理模块</li>
+                                        <ul>
+                                            <li>识别<span style="color: red;">事务中心</span></li>
+                                            <li>设计事务调度模块</li>
+                                            <li>设计事务处理模块</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p><strong>设计步骤：</strong></p>
+                                <ol>
+                                    <li>确定<span style="color: red;">数据流图类型</span></li>
+                                    <li>识别<span style="color: red;">输入流</span>和<span style="color: red;">输出流</span>的边界</li>
+                                    <li>将<span style="color: red;">数据流图</span>映射为初始<span style="color: red;">模块结构图</span></li>
+                                    <li><span style="color: red;">精化模块结构</span></li>
+                                </ol>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★启发式规则</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p>指导概要设计的经验规则</p>
+                                <ul>
+                                    <li>改进软件结构提高<span style="color: red;">模块独立性</span></li>
+                                    <li>力求单一模块的<span style="color: red;">作用范围</span>在其<span style="color: red;">控制范围</span>内</li>
+                                    <li>采用适当<span style="color: red;">深度</span>、<span style="color: red;">宽度</span>、<span style="color: red;">扇入</span>和<span style="color: red;">扇出</span>的模块结构</li>
+                                    <li><span style="color: red;">模块大小适中</span></li>
+                                    <li><span style="color: red;">模块接口简单</span>，<span style="color: red;">信息隐蔽</span></li>
+                                </ul>
+                                <p><strong><span style="color: red;">启发式规则（深度、宽度、扇入、扇出含义）</span>：</strong></p>
+                                <ul>
+                                    <li><strong>深度</strong>：表示软件结构中控制的层数，反映了软件结构中从顶层模块到单独模块的最大距离</li>
+                                    <li><strong>宽度</strong>：表示软件结构内同一层次上模块总数的最大值</li>
+                                    <li><strong>扇入</strong>：一个模块有多少个上级模块调用它</li>
+                                    <li><strong>扇出</strong>：一个模块直接控制的下级模块数</li>
+                                </ul>
+                                <p><strong><span style="color: red;">作用范围与控制范围</span>：</strong>模块的作用范围应在其控制范围内</p>
+                                <p><strong><span style="color: red;">模块的作用范围和控制范围是什么意思，他们之间是什么关系</span>：</strong></p>
+                                <ul>
+                                    <li><strong>控制范围</strong>：指对该模块本身及其所有下级模块的集合</li>
+                                    <li><strong>作用范围</strong>：指受该模块内一个判定影响的所有模块的集合</li>
+                                    <li><strong>关系</strong>：一个模块的作用范围应在其控制范围内，否则需要重新设计模块结构</li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★软件结构图</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p>描述软件系统结构的图形工具</p>
+                                <p><strong>基本成分：</strong></p>
+                                <ul>
+                                    <li><strong><span style="color: red;">模块</span>：</strong>矩形框表示</li>
+                                    <li><strong><span style="color: red;">调用关系</span>：</strong>箭头表示</li>
+                                    <li><strong><span style="color: red;">信息传递</span>：</strong>带注释的箭头表示</li>
+                                </ul>
+                                <p><strong>特点：</strong></p>
+                                <ul>
+                                    <li><span style="color: red;">层次结构清晰</span></li>
+                                    <li>反映<span style="color: red;">模块间调用关系</span></li>
+                                    <li>体现<span style="color: red;">模块间接口关系</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="topic-item">
+                            <div class="topic-title">
+                                <span>★人机界面设计</span>
+                            </div>
+                            <div class="topic-content hidden">
+                                <p>设计用户与系统交互的界面</p>
+                                <p><strong>设计过程：</strong></p>
+                                <ol>
+                                    <li>设计界面的<span style="color: red;">初步原型</span></li>
+                                    <li>对界面<span style="color: red;">原型</span>进行分析</li>
+                                    <li>构造和修改界面<span style="color: red;">模型</span></li>
+                                    <li>用<span style="color: red;">原型</span>与用户交流</li>
+                                </ol>
+                                <p><strong>设计原则：</strong></p>
+                                <ul>
+                                    <li><span style="color: red;">界面友好</span>，<span style="color: red;">易于使用</span></li>
+                                    <li><span style="color: red;">界面一致性</span></li>
+                                    <li><span style="color: red;">容错能力</span></li>
+                                    <li>提供<span style="color: red;">帮助功能</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="mindmap-section">
+                <div class="container">
+                    <h2 class="section-title">第四章知识体系</h2>
+                    <div class="mindmap-container" id="mindmap-container">
+                        <div class="knowledge-map">
+                            <div class="central-node">
+                                概要设计
+                            </div>
+                            <div class="branch-connectors">
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                                <div class="connector-line"></div>
+                            </div>
+                            <div class="branch-level-1">
+                                <div class="branch-node branch-node-1">
+                                    <div class="node-icon"><i class="fas fa-tasks"></i></div>
+                                    <div class="node-content">基本任务</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">总体结构设计</div>
+                                        <div class="subnode">数据结构设计</div>
+                                        <div class="subnode">用户界面设计</div>
+                                        <div class="subnode">测试计划</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="branch-node branch-node-2">
+                                    <div class="node-icon"><i class="fas fa-puzzle-piece"></i></div>
+                                    <div class="node-content">模块化设计</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">模块化原理</div>
+                                        <div class="subnode">抽象与逐步求精</div>
+                                        <div class="subnode">模块化好处</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="branch-node branch-node-3">
+                                    <div class="node-icon"><i class="fas fa-link"></i></div>
+                                    <div class="node-content">模块独立性</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">耦合类型</div>
+                                        <div class="subnode">内聚类型</div>
+                                        <div class="subnode">高内聚低耦合</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="branch-node branch-node-4">
+                                    <div class="node-icon"><i class="fas fa-sitemap"></i></div>
+                                    <div class="node-content">面向数据流设计</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">变换型数据流</div>
+                                        <div class="subnode">事务型数据流</div>
+                                        <div class="subnode">设计步骤</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="branch-node branch-node-5">
+                                    <div class="node-icon"><i class="fas fa-lightbulb"></i></div>
+                                    <div class="node-content">设计工具</div>
+                                    <div class="branch-subnodes">
+                                        <div class="subnode">软件结构图</div>
+                                        <div class="subnode">启发式规则</div>
+                                        <div class="subnode">人机界面设计</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <div class="container">
+                <p class="footer-content">软件工程导论复习系统 &copy; 2026</p>
+            </div>
+        </footer>
+
+        <button id="backToTop" onclick="scrollToTop()" style="display: none;">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+
+        <script src="js/main.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 1000,
+                once: true,
+                easing: 'ease-out'
+            });
+            
+            // 确保思维导图也能正常初始化
+            if (document.getElementById('mindmap-container')) {
+                // 页面加载完成后初始化思维导图
+                window.addEventListener('load', function() {
+                    if (typeof initializeMindMap === 'function') {
+                        initializeMindMap();
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>

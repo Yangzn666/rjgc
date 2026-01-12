@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试练习 - 软件工程导论复习系统</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .quiz-container {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            font-family: 'FZCuHei', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .quiz-item {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid #667eea;
+            font-family: 'FZCuHei', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .quiz-question {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            padding-left: 2.5rem;
+            position: relative;
+            font-family: 'FZCuHei', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .quiz-question::before {
+            content: "?";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+        .quiz-options {
+            margin-left: 1.5rem;
+            font-family: 'FZCuHei', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .quiz-options label {
+            display: block;
+            padding: 0.8rem 1.2rem;
+            margin-bottom: 0.6rem;
+            background: #f1f2f6;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'FZCuHei', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .quiz-options label:hover {
+            background: #e2e5ea;
+        }
+        
+        .quiz-answer {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #f0f7ff;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+            display: none;
+            font-family: 'FZCuHei', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .quiz-actions {
+            margin-top: 1.5rem;
+            text-align: center;
+            font-family: 'FZCuHei', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .fill-blank-answer {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #e8f5e9;
+            border-radius: 8px;
+            border-left: 4px solid #4caf50;
+            font-family: 'FZCuHei', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <div class="decorative-circle decorative-circle-1"></div>
+    <div class="decorative-circle decorative-circle-2"></div>
+    
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-logo">软件工程复习</h1>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="keypoints.html" class="nav-link">复习重点</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="test.html" class="nav-link active">测试练习</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="chapter-content">
+            <div class="content-container-wide">
+                <h2 style="text-align: center; margin-bottom: 2rem; color: #2c3e50; font-size: 2.2rem;">软件工程导论测试练习</h2>
+                
+                <!-- 选择题部分 -->
+                <div class="quiz-container">
+                    <h3 style="color: #667eea; margin-bottom: 1.5rem; font-size: 1.6rem;">选择题（共20题）</h3>
+                    
+                    <!-- 选择题1 -->
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>1. <span style="color: red;">软件危机</span>的表现不包括：</strong>
+                        </div>
+                        <div class="quiz-options">
+                            <label onclick="selectOption(this, 'q1', 'a')">A. 软件成本高</label>
+                            <label onclick="selectOption(this, 'q1', 'b')">B. 软件质量差</label>
+                            <label onclick="selectOption(this, 'q1', 'c')">C. 软件开发速度快</label>
+                            <label onclick="selectOption(this, 'q1', 'd')">D. 软件维护困难</label>
+                        </div>
+                        <div class="quiz-answer" id="answer-q1"></div>
+                    </div>
+                    
+                    <!-- 选择题2 -->
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>2. <span style="color: red;">软件工程</span>的三要素是：</strong>
+                        </div>
+                        <div class="quiz-options">
+                            <label onclick="selectOption(this, 'q2', 'a')">A. 方法、工具、过程</label>
+                            <label onclick="selectOption(this, 'q2', 'b')">B. 需求、设计、编码</label>
+                            <label onclick="selectOption(this, 'q2', 'c')">C. 分析、设计、实现</label>
+                            <label onclick="selectOption(this, 'q2', 'd')">D. 文档、程序、数据</label>
+                        </div>
+                        <div class="quiz-answer" id="answer-q2"></div>
+                    </div>
+                    
+                    <!-- 选择题3 -->
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>3. 在<span style="color: red;">模块独立性</span>中，我们追求的目标是：</strong>
+                        </div>
+                        <div class="quiz-options">
+                            <label onclick="selectOption(this, 'q3', 'a')">A. 高耦合、低内聚</label>
+                            <label onclick="selectOption(this, 'q3', 'b')">B. 低耦合、高内聚</label>
+                            <label onclick="selectOption(this, 'q3', 'c')">C. 高耦合、高内聚</label>
+                            <label onclick="selectOption(this, 'q3', 'd')">D. 低耦合、低内聚</label>
+                        </div>
+                        <div class="quiz-answer" id="answer-q3"></div>
+                    </div>
+                    
+                    <!-- 选择题4 -->
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>4. <span style="color: red;">软件测试</span>的最主要目的是：</strong>
+                        </div>
+                        <div class="quiz-options">
+                            <label onclick="selectOption(this, 'q4', 'a')">A. 证明程序没有错误</label>
+                            <label onclick="selectOption(this, 'q4', 'b')">B. 尽可能多地发现程序中的错误</label>
+                            <label onclick="selectOption(this, 'q4', 'c')">C. 修正程序中的错误</label>
+                            <label onclick="selectOption(this, 'q4', 'd')">D. 优化程序性能</label>
+                        </div>
+                        <div class="quiz-answer" id="answer-q4"></div>
+                    </div>
+                    
+                    <!-- 选择题5 -->
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>5. <span style="color: red;">软件生命周期</span>的三大阶段是：</strong>
+                        </div>
+                        <div class="quiz-options">
+                            <label onclick="selectOption(this, 'q5', 'a')">A. 需求、设计、编码</label>
+                            <label onclick="selectOption(this, 'q5', 'b')">B. 定义、开发、维护</label>
+                            <label onclick="selectOption(this, 'q5', 'c')">C. 分析、设计、测试</label>
+                            <label onclick="selectOption(this, 'q5', 'd')">D. 编码、测试、部署</label>
+                        </div>
+                        <div class="quiz-answer" id="answer-q5"></div>
+                    </div>
+                    
+                    <!-- 选择题6 -->
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>6. <span style="color: red;">软件维护</span>的四种类型中，占工作量比例最大的是：</strong>
+                        </div>
+                        <div class="quiz-options">
+                            <label onclick="selectOption(this, 'q6', 'a')">A. 改正性维护</label>
+                            <label onclick="selectOption(this, 'q6', 'b')">B. 适应性维护</label>
+                            <label onclick="selectOption(this, 'q6', 'c')">C. 完善性维护</label>
+                            <label onclick="selectOption(this, 'q6', 'd')">D. 预防性维护</label>
+                        </div>
+                        <div class="quiz-answer" id="answer-q6"></div>
+                    </div>
+                    
+                    <!-- 选择题7 -->
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>7. <span style="color: red;">可行性研究</span>最核心的三个方面不包括：</strong>
+                        </div>
+                        <div class="quiz-options">
+                            <label onclick="selectOption(this, 'q7', 'a')">A. 技术可行性</label>
+                            <label onclick="selectOption(this, 'q7', 'b')">B. 经济可行性</label>
+                            <label onclick="selectOption(this, 'q7', 'c')">C. 操作可行性</label>
+                            <label onclick="selectOption(this, 'q7', 'd')">D. 美观可行性</label>
+                        </div>
+                        <div class="quiz-answer" id="answer-q7"></div>
+                    </div>
+                    
+                    <!-- 选择题8 -->
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>8. <span style="color: red;">数据流图</span>的四个元素不包括：</strong>
+                        </div>
+                        <div class="quiz-options">
+                            <label onclick="selectOption(this, 'q8', 'a')">A. 外部实体</label>
+                            <label onclick="selectOption(this, 'q8', 'b')">B. 数据处理</label>
+                            <label onclick="selectOption(this, 'q8', 'c')">C. 数据存储</label>
+                            <label onclick="selectOption(this, 'q8', 'd')">D. 算法函数</label>
+                        </div>
+                        <div class="quiz-answer" id="answer-q8"></div>
+                    </div>
+                    
+                    <!-- 选择题9 -->
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>9. <span style="color: red;">需求分析</span>围绕的主要内容是：</strong>
+                        </div>
+                        <div class="quiz-options">
+                            <label onclick="selectOption(this, 'q9', 'a')">A. 功能需求和性能需求</label>
+                            <label onclick="selectOption(this, 'q9', 'b')">B. 代码质量和文档</label>
+                            <label onclick="selectOption(this, 'q9', 'c')">C. 硬件配置和网络</label>
+                            <label onclick="selectOption(this, 'q9', 'd')">D. 测试和部署</label>
+                        </div>
+                        <div class="quiz-answer" id="answer-q9"></div>
+                    </div>
+                    
+                    <!-- 选择题10 -->
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>10. <span style="color: red;">白盒测试</span>又称为：</strong>
+                        </div>
+                        <div class="quiz-options">
+                            <label onclick="selectOption(this, 'q10', 'a')">A. 黑盒测试</label>
+                            <label onclick="selectOption(this, 'q10', 'b')">B. 结构测试</label>
+                            <label onclick="selectOption(this, 'q10', 'c')">C. 功能测试</label>
+                            <label onclick="selectOption(this, 'q10', 'd')">D. 集成测试</label>
+                        </div>
+                        <div class="quiz-answer" id="answer-q10"></div>
+                    </div>
+                    
+                    <!-- 选择题11 -->
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>11. <span style="color: red;">黑盒测试</span>主要关注的是：</strong>
+                        </div>
+                        <div class="quiz-options">
+                            <label onclick="selectOption(this, 'q11', 'a')">A. 程序内部结构</label>
+                            <label onclick="selectOption(this, 'q11', 'b')">B. 程序的逻辑路径</label>
+                            <label onclick="selectOption(this, 'q11', 'c')">C. 程序的功能和输入输出关系</label>
+                            <label onclick="selectOption(this, 'q11', 'd')">D. 代码的复杂度</label>
+                        </div>
+                        <div class="quiz-answer" id="answer-q11"></div>
+                    </div>
+                    
+                    <!-- 选择题12 -->
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>12. <span style="color: red;">集成测试</span>中，渐增式和非渐增式相比：</strong>
+                        </div>
+                        <div class="quiz-options">
+                            <label onclick="selectOption(this, 'q12', 'a')">A. 渐增式更复杂但错误定位容易</label>
+                            <label onclick="selectOption(this, 'q12', 'b')">B. 非渐增式更复杂但错误定位容易</label>
+                            <label onclick="selectOption(this, 'q12', 'c')">C. 两者一样复杂</label>
+                            <label onclick="selectOption(this, 'q12', 'd')">D. 无法比较</label>
+                        </div>
+                        <div class="quiz-answer" id="answer-q12"></div>
+                    </div>
+                    
+                    <!-- 选择题13 -->
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>13. <span style="color: red;">逻辑覆盖</span>中，覆盖程度最高的是：</strong>
+                        </div>
+                        <div class="quiz-options">
+                            <label onclick="selectOption(this, 'q13', 'a')">A. 语句覆盖</label>
+                            <label onclick="selectOption(this, 'q13', 'b')">B. 条件覆盖</label>
+                            <label onclick="selectOption(this, 'q13', 'c')">C. 判定覆盖</label>
+                            <label onclick="selectOption(this, 'q13', 'd')">D. 条件组合覆盖</label>
+                        </div>
+                        <div class="quiz-answer" id="answer-q13"></div>
+                    </div>
+                    
+                    <!-- 选择题14 -->
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>14. <span style="color: red;">等价类划分</span>属于哪种测试技术：</strong>
+                        </div>
+                        <div class="quiz-options">
+                            <label onclick="selectOption(this, 'q14', 'a')">A. 白盒测试</label>
+                            <label onclick="selectOption(this, 'q14', 'b')">B. 黑盒测试</label>
+                            <label onclick="selectOption(this, 'q14', 'c')">C. 灰盒测试</label>
+                            <label onclick="selectOption(this, 'q14', 'd')">D. 单元测试</label>
+                        </div>
+                        <div class="quiz-answer" id="answer-q14"></div>
+                    </div>
+                    
+                    <!-- 选择题15 -->
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>15. <span style="color: red;">面向对象方法学</span>的四个要点不包括：</strong>
+                        </div>
+                        <div class="quiz-options">
+                            <label onclick="selectOption(this, 'q15', 'a')">A. 认为对象是基本的运行时实体</label>
+                            <label onclick="selectOption(this, 'q15', 'b')">B. 强调对象间的消息传递</label>
+                            <label onclick="selectOption(this, 'q15', 'c')">B. 把所有对象都划分成各种对象类</label>
+                            <label onclick="selectOption(this, 'q15', 'd')">D. 忽视对象的封装特性</label>
+                        </div>
+                        <div class="quiz-answer" id="answer-q15"></div>
+                    </div>
+                    
+                    <!-- 选择题16 -->
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>16. <span style="color: red;">类和类之间</span>的关系不包括：</strong>
+                        </div>
+                        <div class="quiz-options">
+                            <label onclick="selectOption(this, 'q16', 'a')">A. 聚合关系</label>
+                            <label onclick="selectOption(this, 'q16', 'b')">B. 泛化关系</label>
+                            <label onclick="selectOption(this, 'q16', 'c')">C. 依赖关系</label>
+                            <label onclick="selectOption(this, 'q16', 'd')">D. 继承关系</label>
+                        </div>
+                        <div class="quiz-answer" id="answer-q16"></div>
+                    </div>
+                    
+                    <!-- 选择题17 -->
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>17. <span style="color: red;">用例</span>主要用于：</strong>
+                        </div>
+                        <div class="quiz-options">
+                            <label onclick="selectOption(this, 'q17', 'a')">A. 描述系统与外部参与者之间交互的场景</label>
+                            <label onclick="selectOption(this, 'q17', 'b')">B. 描述数据库结构</label>
+                            <label onclick="selectOption(this, 'q17', 'c')">C. 描述硬件配置</label>
+                            <label onclick="selectOption(this, 'q17', 'd')">D. 描述网络协议</label>
+                        </div>
+                        <div class="quiz-answer" id="answer-q17"></div>
+                    </div>
+                    
+                    <!-- 选择题18 -->
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>18. <span style="color: red;">面向对象建模技术</span>的3种模型不包括：</strong>
+                        </div>
+                        <div class="quiz-options">
+                            <label onclick="selectOption(this, 'q18', 'a')">A. 对象模型</label>
+                            <label onclick="selectOption(this, 'q18', 'b')">B. 动态模型</label>
+                            <label onclick="selectOption(this, 'q18', 'c')">C. 功能模型</label>
+                            <label onclick="selectOption(this, 'q18', 'd')">D. 网络模型</label>
+                        </div>
+                        <div class="quiz-answer" id="answer-q18"></div>
+                    </div>
+                    
+                    <!-- 选择题19 -->
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>19. <span style="color: red;">流图中</span>变换型和事务型的区别在于：</strong>
+                        </div>
+                        <div class="quiz-options">
+                            <label onclick="selectOption(this, 'q19', 'a')">A. 变换型是输入-处理-输出型结构，事务型是接收输入并根据事务类型调用不同处理模块</label>
+                            <label onclick="selectOption(this, 'q19', 'b')">B. 变换型用于数据库操作，事务型用于文件操作</label>
+                            <label onclick="selectOption(this, 'q19', 'c')">C. 变换型是循环结构，事务型是分支结构</label>
+                            <label onclick="selectOption(this, 'q19', 'd')">D. 两者没有本质区别</label>
+                        </div>
+                        <div class="quiz-answer" id="answer-q19"></div>
+                    </div>
+                    
+                    <!-- 选择题20 -->
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>20. <span style="color: red;">软件可靠性</span>和<span style="color: red;">可用性</span>的区别是：</strong>
+                        </div>
+                        <div class="quiz-options">
+                            <label onclick="selectOption(this, 'q20', 'a')">A. 可靠性关注软件在特定时间内的稳定性和故障概率，可用性关注软件在特定时刻的可访问性</label>
+                            <label onclick="selectOption(this, 'q20', 'b')">B. 两者完全相同</label>
+                            <label onclick="selectOption(this, 'q20', 'c')">C. 可靠性关注界面美观，可用性关注功能实现</label>
+                            <label onclick="selectOption(this, 'q20', 'd')">D. 可靠性关注性能，可用性关注安全性</label>
+                        </div>
+                        <div class="quiz-answer" id="answer-q20"></div>
+                    </div>
+                </div>
+                
+                <!-- 填空题部分 -->
+                <div class="quiz-container">
+                    <h3 style="color: #667eea; margin-bottom: 1.5rem; font-size: 1.6rem;">填空题（共10题）</h3>
+                    
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>1. <span style="color: red;">软件工程</span>指的是开发软件需要整个工作的________以及各个工作的实施步骤。</strong>
+                        </div>
+                        <button class="check-btn btn-primary" onclick="showModelAnswer('fill1')">查看参考答案</button>
+                        <div class="quiz-answer" id="fill1" style="display:none;">
+                            答案：<span style="color: red;">框架</span>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>2. <span style="color: red;">数据字典</span>是描述________的工具，与数据流图共同构成了系统的逻辑模型。</strong>
+                        </div>
+                        <button class="check-btn btn-primary" onclick="showModelAnswer('fill2')">查看参考答案</button>
+                        <div class="quiz-answer" id="fill2" style="display:none;">
+                            答案：<span style="color: red;">数据信息</span>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>3. <span style="color: red;">货币的时间价值</span>是指货币随着时间推移其________会发生变化。</strong>
+                        </div>
+                        <button class="check-btn btn-primary" onclick="showModelAnswer('fill3')">查看参考答案</button>
+                        <div class="quiz-answer" id="fill3" style="display:none;">
+                            答案：<span style="color: red;">价值</span>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>4. <span style="color: red;">需求分析</span>建立的三个模型是________模型、________模型、________模型。</strong>
+                        </div>
+                        <button class="check-btn btn-primary" onclick="showModelAnswer('fill4')">查看参考答案</button>
+                        <div class="quiz-answer" id="fill4" style="display:none;">
+                            答案：<span style="color: red;">对象</span>、<span style="color: red;">动态</span>、<span style="color: red;">功能</span>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>5. <span style="color: red;">模块独立性</span>通过________和________两个指标来衡量。</strong>
+                        </div>
+                        <button class="check-btn btn-primary" onclick="showModelAnswer('fill5')">查看参考答案</button>
+                        <div class="quiz-answer" id="fill5" style="display:none;">
+                            答案：<span style="color: red;">耦合</span>、<span style="color: red;">内聚</span>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>6. <span style="color: red;">扇入</span>是指一个模块有多少个上级模块________它，<span style="color: red;">扇出</span>是指一个模块直接控制的下级模块数。</strong>
+                        </div>
+                        <button class="check-btn btn-primary" onclick="showModelAnswer('fill6')">查看参考答案</button>
+                        <div class="quiz-answer" id="fill6" style="display:none;">
+                            答案：<span style="color: red;">调用</span>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>7. <span style="color: red;">程序复杂程度</span>的度量方法中，环形复杂度的计算公式是V(G) = E-N+2，其中E是________数，N是________数。</strong>
+                        </div>
+                        <button class="check-btn btn-primary" onclick="showModelAnswer('fill7')">查看参考答案</button>
+                        <div class="quiz-answer" id="fill7" style="display:none;">
+                            答案：<span style="color: red;">边</span>、<span style="color: red;">节点</span>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>8. <span style="color: red;">黑盒测试</span>的两种主要技术是________划分和________值分析。</strong>
+                        </div>
+                        <button class="check-btn btn-primary" onclick="showModelAnswer('fill8')">查看参考答案</button>
+                        <div class="quiz-answer" id="fill8" style="display:none;">
+                            答案：<span style="color: red;">等价类</span>、<span style="color: red;">边界</span>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>9. <span style="color: red;">面向对象分析</span>(OOA)建立的三个模型是________模型、________模型、________模型。</strong>
+                        </div>
+                        <button class="check-btn btn-primary" onclick="showModelAnswer('fill9')">查看参考答案</button>
+                        <div class="quiz-answer" id="fill9" style="display:none;">
+                            答案：<span style="color: red;">对象</span>、<span style="color: red;">动态</span>、<span style="color: red;">功能</span>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>10. <span style="color: red;">软件维护</span>的四种类型是改正性维护、适应性维护、________性维护、预防性维护。</strong>
+                        </div>
+                        <button class="check-btn btn-primary" onclick="showModelAnswer('fill10')">查看参考答案</button>
+                        <div class="quiz-answer" id="fill10" style="display:none;">
+                            答案：<span style="color: red;">完善</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 简答题部分 -->
+                <div class="quiz-container">
+                    <h3 style="color: #667eea; margin-bottom: 1.5rem; font-size: 1.6rem;">简答题（共5题）</h3>
+                    
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>1. 什么是<span style="color: red;">软件危机</span>？其表现有哪些？</strong>
+                        </div>
+                        <button class="check-btn btn-primary" onclick="showModelAnswer('def1')">查看参考答案</button>
+                        <div class="quiz-answer" id="def1" style="display:none;">
+                            <span style="color: red;">软件危机</span>是指在计算机软件开发和维护过程中所遇到的一系列严重问题。其主要表现包括：<br><br>
+                            1. <span style="color: red;">软件成本高</span>：软件开发费用超出预算，开发成本持续增长<br>
+                            2. <span style="color: red;">软件质量差</span>：软件存在大量错误，可靠性差<br>
+                            3. <span style="color: red;">开发进度难以控制</span>：项目延期严重，无法按时交付<br>
+                            4. <span style="color: red;">维护困难</span>：软件维护成本高，难以修改和升级<br><br>
+                            例如：IBM的System/360操作系统项目，预算1000万美元，最终花费超过5000万美元。
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>2. 什么是<span style="color: red;">模块独立性</span>？如何衡量模块独立性？</strong>
+                        </div>
+                        <button class="check-btn btn-primary" onclick="showModelAnswer('def2')">查看参考答案</button>
+                        <div class="quiz-answer" id="def2" style="display:none;">
+                            <span style="color: red;">模块独立性</span>是指软件系统中每个<span style="color: red;">模块</span>只完成系统要求的独立的子功能，并且与其他模块之间的接口简单。<br><br>
+                            <span style="color: red;">模块独立性</span>可以通过两个指标来衡量：<br>
+                            1. <span style="color: red;">耦合</span>：衡量不同模块彼此间相互依赖的紧密程度。目标是低耦合，模块间联系尽可能松散<br>
+                            2. <span style="color: red;">内聚</span>：衡量一个模块内部各元素彼此结合的紧密程度。目标是高内聚，模块内部功能高度相关<br><br>
+                            模块独立性的好处：提高模块的可维护性和可重用性，降低系统复杂性。
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>3. <span style="color: red;">白盒测试</span>和<span style="color: red;">黑盒测试</span>有什么区别？</strong>
+                        </div>
+                        <button class="check-btn btn-primary" onclick="showModelAnswer('def3')">查看参考答案</button>
+                        <div class="quiz-answer" id="def3" style="display:none;">
+                            <span style="color: red;">白盒测试</span>和<span style="color: red;">黑盒测试</span>的主要区别：<br><br>
+                            1. <span style="color: red;">白盒测试</span>（结构测试）：<br>
+                            - 基于程序内部逻辑结构进行测试<br>
+                            - 测试者了解程序内部实现<br>
+                            - 主要方法：逻辑覆盖、基本路径测试<br>
+                            - 目标：确保程序内部逻辑路径正确<br><br>
+                            
+                            2. <span style="color: red;">黑盒测试</span>（功能测试）：<br>
+                            - 基于程序功能和外部行为进行测试<br>
+                            - 测试者不了解程序内部实现<br>
+                            - 主要方法：等价类划分、边界值分析、因果图法<br>
+                            - 目标：验证程序是否满足功能需求<br><br>
+                            
+                            两种方法互补使用，通常在单元测试阶段多用白盒测试，在系统测试阶段多用黑盒测试。
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>4. 什么是<span style="color: red;">软件维护</span>？四种维护类型分别是什么？</strong>
+                        </div>
+                        <button class="check-btn btn-primary" onclick="showModelAnswer('def4')">查看参考答案</button>
+                        <div class="quiz-answer" id="def4" style="display:none;">
+                            <span style="color: red;">软件维护</span>是指软件系统交付使用后，为了改正错误或满足新的需要而修改软件的过程。<br><br>
+                            四种维护类型：<br>
+                            1. <span style="color: red;">改正性维护</span>：诊断和改正软件中潜藏的错误<br>
+                            2. <span style="color: red;">适应性维护</span>：使软件适应环境的变化<br>
+                            3. <span style="color: red;">完善性维护</span>：增加软件功能或改善软件性能<br>
+                            4. <span style="color: red;">预防性维护</span>：为了提高软件的可维护性和可靠性而进行的修改<br><br>
+                            其中，<span style="color: red;">完善性维护</span>占比最大，约占软件维护工作量的50%以上。
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>5. <span style="color: red;">面向对象方法学</span>的四个要点是什么？</strong>
+                        </div>
+                        <button class="check-btn btn-primary" onclick="showModelAnswer('def5')">查看参考答案</button>
+                        <div class="quiz-answer" id="def5" style="display:none;">
+                            <span style="color: red;">面向对象方法学</span>的四个要点：<br><br>
+                            1. <span style="color: red;">认为对象是基本的运行时实体</span>：现实世界的任何事物都可以看作对象，对象既有属性又有操作<br>
+                            2. <span style="color: red;">强调对象间的消息传递</span>：对象之间通过消息进行通信和协作<br>
+                            3. <span style="color: red;">把所有对象都划分成各种对象类</span>：相同属性和操作的对象归为一类，类是对象的抽象<br>
+                            4. <span style="color: red;">对具有相同特性的对象抽象成类</span>：通过继承机制实现代码复用和系统扩展<br><br>
+                            面向对象方法学的特点：与人类思维方式一致、稳定性好、可重用性强、易于开发大型软件和维护。
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 综合题部分 -->
+                <div class="quiz-container">
+                    <h3 style="color: #667eea; margin-bottom: 1.5rem; font-size: 1.6rem;">综合题（共3题）</h3>
+                    
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>1. 比较<span style="color: red;">传统软件工程方法</span>和<span style="color: red;">面向对象软件工程方法</span>的优缺点，并说明各自的适用场景。</strong>
+                        </div>
+                        <button class="check-btn btn-primary" onclick="showModelAnswer('comp1')">查看参考答案</button>
+                        <div class="quiz-answer" id="comp1" style="display:none;">
+                            <span style="color: red;">传统软件工程方法</span>：<br>
+                            优点：<span style="color: red;">结构清晰</span>，<span style="color: red;">开发过程规范</span>，适合<span style="color: red;">功能明确的系统</span>。例如：早期的批处理系统、操作系统等。<br>
+                            缺点：对<span style="color: red;">需求变化适应性差</span>，<span style="color: red;">难以应对复杂系统</span>。例如：需求频繁变更的电商平台开发困难。<br><br>
+                            
+                            <span style="color: red;">面向对象软件工程方法</span>：<br>
+                            优点：与<span style="color: red;">人类思维一致</span>，<span style="color: red;">稳定性好</span>，<span style="color: red;">可重用性强</span>，<span style="color: red;">易于开发大型软件和维护</span>。例如：Java企业级应用、现代Web框架等。<br>
+                            缺点：<span style="color: red;">学习成本较高</span>，对<span style="color: red;">设计人员要求更高</span>。例如：需要深入理解<span style="color: red;">封装</span>、<span style="color: red;">继承</span>、<span style="color: red;">多态</span>等概念。<br><br>
+                            
+                            适用场景：<br>
+                            - 传统方法：适用于需求明确且稳定的系统，如系统工具、嵌入式系统等<br>
+                            - 面向对象方法：适用于需求变化较多、规模较大的复杂系统，如企业级应用、图形界面应用等
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>2. 详细说明<span style="color: red;">软件测试</span>的各个步骤及其主要目的，并分析各步骤之间的关系。</strong>
+                        </div>
+                        <button class="check-btn btn-primary" onclick="showModelAnswer('comp2')">查看参考答案</button>
+                        <div class="quiz-answer" id="comp2" style="display:none;">
+                            <span style="color: red;">软件测试</span>的四个主要步骤：<br><br>
+                            
+                            1. <span style="color: red;">单元测试</span>：<br>
+                            - 目的：测试单个模块，确保每个模块功能正确<br>
+                            - 方法：主要使用白盒测试方法，检查模块内部逻辑<br>
+                            - 依据：模块详细设计说明书<br><br>
+                            
+                            2. <span style="color: red;">集成测试</span>：<br>
+                            - 目的：测试模块间接口和交互，确保模块组合后功能正确<br>
+                            - 方法：渐增式集成或非渐增式集成，自顶向下或自底向上<br>
+                            - 依据：软件概要设计说明书<br><br>
+                            
+                            3. <span style="color: red;">确认测试</span>：<br>
+                            - 目的：验证软件是否满足需求，确保软件符合用户要求<br>
+                            - 方法：主要使用黑盒测试方法，验证功能和性能<br>
+                            - 依据：软件需求规格说明书<br><br>
+                            
+                            4. <span style="color: red;">系统测试</span>：<br>
+                            - 目的：测试整个系统，确保系统在实际环境中正常运行<br>
+                            - 方法：在真实环境下进行全面测试<br>
+                            - 依据：系统需求和用户环境<br><br>
+                            
+                            各步骤关系：是一个<span style="color: red;">逐步深化</span>的过程，前一步骤的输出是后一步骤的输入。只有当<span style="color: red;">单元测试</span>通过后才能进行<span style="color: red;">集成测试</span>，依次类推。
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <strong><span class="red-star">★</span>3. 分析<span style="color: red;">瀑布模型</span>、<span style="color: red;">快速原型模型</span>、<span style="color: red;">增量模型</span>、<span style="color: red;">螺旋模型</span>的优缺点及适用场景，并说明它们之间的关系。</strong>
+                        </div>
+                        <button class="check-btn btn-primary" onclick="showModelAnswer('comp3')">查看参考答案</button>
+                        <div class="quiz-answer" id="comp3" style="display:none;">
+                            1. <span style="color: red;">瀑布模型</span>：<br>
+                            - 优点：<span style="color: red;">阶段划分清晰</span>，<span style="color: red;">文档驱动</span>，<span style="color: red;">便于管理控制</span><br>
+                            - 缺点：<span style="color: red;">缺乏灵活性</span>，<span style="color: red;">难以适应需求变更</span>，<span style="color: red;">用户反馈较晚</span><br>
+                            - 适用：<span style="color: red;">需求明确且稳定的项目</span>，如大型系统开发<br><br>
+                            
+                            2. <span style="color: red;">快速原型模型</span>：<br>
+                            - 优点：<span style="color: red;">用户可及早参与反馈</span>，<span style="color: red;">需求理解更准确</span><br>
+                            - 缺点：<span style="color: red;">可能忽略质量与性能要求</span>，<span style="color: red;">文档可能不完整</span><br>
+                            - 适用：<span style="color: red;">需求不明确的系统</span>，如用户界面设计<br><br>
+                            
+                            3. <span style="color: red;">增量模型</span>：<br>
+                            - 优点：<span style="color: red;">可分阶段交付产品</span>，<span style="color: red;">降低风险</span>，<span style="color: red;">便于管理</span><br>
+                            - 缺点：<span style="color: red;">需要良好的体系结构设计</span><br>
+                            - 适用：<span style="color: red;">大型项目分阶段交付</span>，如Office软件开发<br><br>
+                            
+                            4. <span style="color: red;">螺旋模型</span>：<br>
+                            - 优点：<span style="color: red;">结合瀑布模型和快速原型模型</span>，<span style="color: red;">强调风险分析</span><br>
+                            - 缺点：<span style="color: red;">复杂度高</span>，<span style="color: red;">成本较高</span>，<span style="color: red;">需要风险评估经验</span><br>
+                            - 适用：<span style="color: red;">大型复杂系统</span>，如航空航天系统<br><br>
+                            
+                            它们之间的关系：都是<span style="color: red;">软件开发过程模型</span>，各有特点。<span style="color: red;">瀑布模型</span>是最基础的模型，其他模型是对它的改进和扩展。<span style="color: red;">螺旋模型</span>综合了其他模型的优点，但更为复杂。选择模型时需要根据<span style="color: red;">项目特点</span>和<span style="color: red;">风险因素</span>来决定。
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="quiz-actions">
+                    <button class="btn-primary" onclick="resetAll()">重置答案</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p class="footer-content">软件工程导论复习系统 &copy; 2026</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" onclick="scrollToTop()" style="display: none;">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: 'ease-out'
+        });
+        
+        // 重新定义选择题正确答案映射（避免与外部js冲突）
+        window.testCorrectAnswers = {
+            q1: 'c',
+            q2: 'a',
+            q3: 'b',
+            q4: 'b',
+            q5: 'b',
+            q6: 'c',
+            q7: 'd',
+            q8: 'd',
+            q9: 'a',
+            q10: 'b',
+            q11: 'c',
+            q12: 'a',
+            q13: 'd',
+            q14: 'b',
+            q15: 'd',
+            q16: 'd', // 实际上继承关系就是泛化关系，但这里按常规选项设置
+            q17: 'a',
+            q18: 'd',
+            q19: 'a',
+            q20: 'a'
+        };
+
+        // 重新定义选择题解析映射（避免与外部js冲突）
+        window.testExplanations = {
+            q1: '<span style="color: red;">软件危机</span>的表现包括<span style="color: red;">软件成本高</span>、<span style="color: red;">质量差</span>、<span style="color: red;">开发进度难以控制</span>、<span style="color: red;">维护困难</span>等，不包括<span style="color: red;">软件开发速度快</span>。',
+            q2: '<span style="color: red;">软件工程</span>的三要素是<span style="color: red;">方法</span>、<span style="color: red;">工具</span>和<span style="color: red;">过程</span>，这是<span style="color: red;">软件工程</span>的基本组成部分。',
+            q3: '<span style="color: red;">模块独立性</span>追求的目标是<span style="color: red;">低耦合</span>、<span style="color: red;">高内聚</span>，这样可以提高模块的可维护性和可重用性。',
+            q4: '<span style="color: red;">软件测试</span>的最主要目的是尽可能多地发现程序中的<span style="color: red;">错误</span>，而不是证明程序没有<span style="color: red;">错误</span>。',
+            q5: '<span style="color: red;">软件生命周期</span>的三大阶段是<span style="color: red;">定义阶段</span>、<span style="color: red;">开发阶段</span>、<span style="color: red;">维护阶段</span>。',
+            q6: '<span style="color: red;">完善性维护</span>占<span style="color: red;">软件维护</span>工作量比例最大，因为用户会不断提出功能增强的需求。',
+            q7: '<span style="color: red;">可行性研究</span>最核心的三个方面是<span style="color: red;">技术可行性</span>、<span style="color: red;">经济可行性</span>和<span style="color: red;">操作可行性</span>，不包括<span style="color: red;">美观可行性</span>。',
+            q8: '<span style="color: red;">数据流图</span>的四个元素是<span style="color: red;">外部实体</span>、<span style="color: red;">数据流</span>、<span style="color: red;">数据处理</span>和<span style="color: red;">数据存储</span>，不包括<span style="color: red;">算法函数</span>。',
+            q9: '<span style="color: red;">需求分析</span>围绕的主要内容是<span style="color: red;">功能需求</span>和<span style="color: red;">性能需求</span>。',
+            q10: '<span style="color: red;">白盒测试</span>又称为<span style="color: red;">结构测试</span>或<span style="color: red;">逻辑驱动测试</span>。',
+            q11: '<span style="color: red;">黑盒测试</span>主要关注程序的<span style="color: red;">功能</span>和<span style="color: red;">输入输出关系</span>，不关心内部结构。',
+            q12: '<span style="color: red;">渐增式集成</span>虽然更复杂，但能更容易地<span style="color: red;">定位错误</span>。',
+            q13: '<span style="color: red;">条件组合覆盖</span>是<span style="color: red;">逻辑覆盖</span>中覆盖程度最高的。',
+            q14: '<span style="color: red;">等价类划分</span>属于<span style="color: red;">黑盒测试</span>技术。',
+            q15: '<span style="color: red;">面向对象方法学</span>的四个要点不包括忽视对象的<span style="color: red;">封装特性</span>。',
+            q16: '<span style="color: red;">类和类之间</span>的关系包括<span style="color: red;">聚合</span>、<span style="color: red;">泛化</span>、<span style="color: red;">依赖</span>、<span style="color: red;">细化</span>等，<span style="color: red;">继承</span>是<span style="color: red;">泛化关系</span>的具体实现。',
+            q17: '<span style="color: red;">用例</span>主要用于描述系统与外部参与者之间交互的场景。',
+            q18: '<span style="color: red;">面向对象建模技术</span>的3种模型是<span style="color: red;">对象模型</span>、<span style="color: red;">动态模型</span>、<span style="color: red;">功能模型</span>，不包括<span style="color: red;">网络模型</span>。',
+            q19: '<span style="color: red;">变换型</span>是<span style="color: red;">输入-处理-输出型结构</span>，<span style="color: red;">事务型</span>是接收输入并根据事务类型调用不同处理模块。',
+            q20: '<span style="color: red;">可靠性</span>关注软件在特定时间内的<span style="color: red;">稳定性</span>和<span style="color: red;">故障概率</span>，<span style="color: red;">可用性</span>关注软件在特定时刻的<span style="color: red;">可访问性</span>。'
+        };
+        
+        // 处理选项点击事件
+        function selectOption(element, questionId, optionId) {
+            // 清除之前的选择
+            const optionsList = element.parentElement.querySelectorAll('label');
+            optionsList.forEach(option => {
+                option.classList.remove('selected', 'correct', 'incorrect');
+            });
+            
+            // 标记当前选择
+            element.classList.add('selected');
+            
+            // 获取正确答案
+            const correctOption = window.testCorrectAnswers[questionId];
+            const answerElement = document.getElementById(`answer-${questionId}`);
+            
+            // 无论选择正确还是错误，都显示答案和解析
+            if (optionId === correctOption) {
+                // 用户选择了正确答案
+                element.classList.add('correct');
+                answerElement.innerHTML = '<span style="color: #27ae60;">✓ 正确！</span><br>解析：' + window.testExplanations[questionId];
+            } else {
+                // 用户选择了错误答案
+                element.classList.add('incorrect');
+                
+                // 查找正确选项并添加正确样式
+                optionsList.forEach(opt => {
+                    const onclickStr = opt.onclick.toString();
+                    if (onclickStr.includes(`'${questionId}'`) && onclickStr.includes(`'${correctOption}'`)) {
+                        opt.classList.add('correct');
+                    }
+                });
+                
+                answerElement.innerHTML = '<span style="color: #e74c3c;">✗ 错误！</span><br>正确答案是：' + 
+                    optionsList[parseInt(correctOption.charCodeAt(0) - 97)].textContent +
+                    '<br>解析：' + window.testExplanations[questionId];
+            }
+            
+            answerElement.style.display = 'block';
+        }
+        
+        // 显示模型答案 - 重写外部函数以适配已有内容
+        function showModelAnswer(elementId) {
+            const modelAnswerElement = document.getElementById(elementId);
+            if (modelAnswerElement) {
+                if (modelAnswerElement.style.display === 'none') {
+                    modelAnswerElement.style.display = 'block';
+                } else {
+                    modelAnswerElement.style.display = 'none';
+                }
+            } else {
+                console.error('Element with id ' + elementId + ' not found');
+            }
+        }
+        
+        // 重置所有答案
+        function resetAll() {
+            // 重置选择题
+            const labels = document.querySelectorAll('.quiz-options label');
+            labels.forEach(label => {
+                label.classList.remove('selected', 'correct', 'incorrect');
+            });
+            
+            // 隐藏所有答案
+            const answers = document.querySelectorAll('.quiz-answer[id^="answer-"]');
+            answers.forEach(answer => {
+                answer.style.display = 'none';
+                answer.innerHTML = '';
+            });
+        }
+    </script>
+</body>
+</html>
